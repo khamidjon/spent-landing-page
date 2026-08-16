@@ -82,6 +82,8 @@ Source: [Apple — Campaign links](https://developer.apple.com/help/app-store-co
 
 ## Channels
 
+> Ready-to-paste full URLs: **[links.md](links.md)**.
+
 | Placement | Link |
 |---|---|
 | Instagram bio | `?src=ig` |
