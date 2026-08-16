@@ -114,10 +114,15 @@ window.CONFIG = {
   // Served by the same Jekyll repo (_pages), so relative works on any domain.
   links: { privacy: '/privacypolicy/', terms: '/terms/' },
 
-  // Cloudflare Web Analytics site token. Dashboard → Analytics & Logs →
-  // Web Analytics → add spent.summerapps.com → copy the token out of the
-  // snippet it shows. Empty = no beacon is loaded at all.
-  cfBeaconToken: ''
+  // Cloudflare Web Analytics site token, for the spent.summerapps.com site
+  // (Dashboard → Analytics → Web analytics). Cookieless, so no consent banner.
+  // Empty = no beacon is loaded at all.
+  //
+  // The beacon only reports on the hostname registered above, so previews on
+  // *.pages.dev and localhost are silently ignored rather than polluting the
+  // numbers. Note there is no query-string dimension — every ?src= link lands
+  // in the same "/" row; per-creative figures come from App Store Connect.
+  cfBeaconToken: '87aaf893d95241bb9e3d1152340917c4'
 };
 </script>
 <!-- ═════════════════════════ end config ════════════════════════════════ -->

@@ -178,7 +178,7 @@ in `index.html`. **Never invent a rating or a review.**
 | Fallback URL | `https://spent-34m.pages.dev` (always live, even before DNS) |
 | Custom domain | `spent.summerapps.com` |
 | DNS | Namecheap — CNAME `spent` → `spent-34m.pages.dev` |
-| Analytics | Cloudflare dashboard → Analytics → Web Analytics (token still unset — see `cfBeaconToken` in `index.html`) |
+| Analytics | Cloudflare dashboard → Analytics → Web analytics → `spent.summerapps.com` (beacon live) |
 | Install attribution | App Store Connect → Analytics → Acquisition |
 | Edge geo | `functions/api/geo.js` (Cloudflare Pages Function, excluded from `_site`) |
 
