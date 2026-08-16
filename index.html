@@ -1,3 +1,1237 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7F7F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0E10" media="(prefers-color-scheme: dark)">
+<title>Spent — AI Expense Tracker for iPhone · Snap, Say, or Type</title>
+<meta name="description" content="Log spending in 3 seconds. Snap a receipt, say it, or type it — Spent's AI fills in the rest. Private, local-first expense tracking with budgets, insights and multi-currency.">
+<link rel="canonical" href="https://spent.summerapps.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spent">
+<meta property="og:title" content="Spent — log a spend in 3 seconds">
+<meta property="og:description" content="Snap a receipt, say it, or type it — Spent's AI fills in the merchant, amount, date and category.">
+<meta property="og:url" content="https://spent.summerapps.com/">
+<meta property="og:image" content="https://spent.summerapps.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spent — log a spend in 3 seconds">
+<meta name="twitter:description" content="Snap a receipt, say it, or type it — Spent's AI fills in the rest.">
+<meta name="twitter:image" content="https://spent.summerapps.com/og.png">
+
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preload" as="image" href="s-receipt.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+
+<!-- App icon, inlined so the first paint needs no extra request. -->
+<script>var ICON_PNG = 'data:image/png;base64,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';</script>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     CONFIG — edit this block only.
+     ══════════════════════════════════════════════════════════════════════ -->
+<script>
+window.CONFIG = {
+  appleId: '6790070790',            // Spent: AI Expense Tracker
+
+  // Apple provider token. Apple's campaign-link docs say: "Ensure your campaign
+  // includes both a provider token and a campaign token" — a ct= with no pt= is
+  // not the documented form, and campaigns may simply never appear under
+  // Analytics → Sources → Campaigns.
+  //
+  // To find it: App Store Connect → Analytics → Acquisition → Campaign links,
+  // generate any campaign link, and read the pt= value out of the URL it hands
+  // back. It is per ACCOUNT, not per app — the same token CalFit uses works
+  // here unchanged.
+  //
+  // Left empty the links behave as ct=-only, so this is safe to ship unset —
+  // but set it before trusting the numbers.
+  appleProviderToken: '',
+
+  // Traffic source. `?src=` (or the referrer) sets it; it becomes `ct=` for
+  // App Store Connect → Analytics, so the console breaks installs down by
+  // source on its own.
+  //
+  // Any lowercase a–z / 0–9 / underscore name up to 24 chars is accepted, so a
+  // new campaign link needs no code change — invent `?src=ramadan_promo` and it
+  // flows straight through. The pattern is the safety boundary: it is what
+  // stops a crafted query param from ever reaching a store URL.
+  srcPattern: /^[a-z0-9_]{1,24}$/,
+
+  // Country → language. Everything not listed falls back to English.
+  geo: {
+    uz: ['UZ'],
+    ru: ['RU','KZ','KG','TJ','TM','BY','AM','AZ','MD','GE']
+  },
+
+  // true = tap tries the itms-apps:// scheme first, then falls back to the
+  // https store link after ~1.6s. false = tap goes straight to https.
+  preferScheme: true,
+
+  // Send iPhones arriving from a social link straight to the store, without
+  // waiting for a tap. Desktop is never redirected (it would just show the
+  // store's web page), and neither is Android — there is no Android app, so
+  // handing an Android visitor to the App Store would be a dead end.
+  autoRedirect: true,
+  autoRedirectDelayMs: 700,
+
+  // Hero phone row, left to right. The middle one is the hero slot.
+  screens: ['s-voice.webp','s-home.webp','s-receipt.webp','s-insights.webp','s-lists.webp'],
+
+  iconUrl: ICON_PNG,
+
+  // Social links. '' hides an icon.
+  social: {
+    instagram: '',
+    telegram:  '',
+    email:     'egamovhamid@gmail.com'
+  },
+
+  // ── Social proof ────────────────────────────────────────────────────
+  // REAL App Store data only — never invent a rating or a review.
+  //
+  // Checked 2026-08-15 via
+  //   curl "https://itunes.apple.com/lookup?id=6790070790&country=uz"
+  //   curl "https://itunes.apple.com/uz/rss/customerreviews/id=6790070790/sortby=mostrecent/json"
+  // → 1 rating (5.0, uz storefront; 0 in us) and an empty reviews feed.
+  //
+  // Both sections stay hidden until the thresholds below are met. "5.0 from 1
+  // rating" reads as brand-new and converts worse than showing nothing, so the
+  // page leads with the product instead. Re-run the two commands, update the
+  // numbers, paste real reviews into STR[*].reviews, and the sections switch
+  // themselves on.
+  rating: { score: '5.0', count: 1 },
+  minRatings: 20,      // show the ratings block at or above this many ratings
+  minReviews: 3,       // show the reviews block at or above this many reviews
+
+  // Leave '' to hide a footer link.
+  // Served by the same Jekyll repo (_pages), so relative works on any domain.
+  links: { privacy: '/privacypolicy/', terms: '/terms/' },
+
+  // Cloudflare Web Analytics site token. Dashboard → Analytics & Logs →
+  // Web Analytics → add spent.summerapps.com → copy the token out of the
+  // snippet it shows. Empty = no beacon is loaded at all.
+  cfBeaconToken: ''
+};
+</script>
+<!-- ═════════════════════════ end config ════════════════════════════════ -->
+
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#F7F7F5; --surface:#fff; --muted:#EFEFEE;
+  --txt:#1C1C1E; --mut:#6B6B70; --dim:#9A9AA0;
+  --accent:#E8434B; --accent-soft:#FCE8E9; --line:#E6E6E4;
+  --shadow:0 18px 44px -22px rgba(28,28,30,.34);
+  --font:"Poppins",-apple-system,"SF Pro Rounded","SF Pro Display",BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0E0E10; --surface:#1A1A1D; --muted:#26262A;
+    --txt:#F5F5F4; --mut:#9A9AA0; --dim:#6E6E76;
+    --accent:#FF5A61; --accent-soft:#2A1A1C; --line:#26262A;
+    --shadow:0 18px 44px -20px rgba(0,0,0,.8);
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip;scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--txt); font-family:var(--font);
+  -webkit-font-smoothing:antialiased; text-wrap:pretty; overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+[hidden]{display:none !important}
+/* margin-inline, not `margin:0 auto` — the shorthand's margin-top:0 outranks
+   the `section` rule below (class beats element) and silently flattened the
+   spacing between every section. */
+.wrap{width:100%; max-width:1080px; margin-inline:auto; padding:0 20px}
+.eyebrow{font:700 12px/1 var(--font); letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent); margin-bottom:14px}
+h2{font:800 clamp(26px,4.2vw,42px)/1.14 var(--font); letter-spacing:-.03em}
+.lede{margin-top:12px; max-width:56ch; color:var(--mut);
+  font:400 clamp(14px,1.5vw,17px)/1.55 var(--font)}
+section{margin-top:clamp(64px,12vh,132px)}
+
+/* Sections fade up as they arrive — the app's own motion-led polish, and the
+   only decoration on an otherwise flat, matte page. */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.r1,.r2,.r3,.r4,.r5{animation:rise .55s cubic-bezier(.22,.8,.3,1) both}
+.r2{animation-delay:.06s}.r3{animation-delay:.12s}.r4{animation-delay:.18s}.r5{animation-delay:.26s}
+.reveal{opacity:0; transform:translateY(18px);
+  transition:opacity .6s cubic-bezier(.22,.8,.3,1), transform .6s cubic-bezier(.22,.8,.3,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .r1,.r2,.r3,.r4,.r5{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  .iab-arrow{animation:none !important}
+}
+
+/* ── header ─────────────────────────────────────────────────────── */
+.top{display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding-top:22px}
+.brand{display:flex; align-items:center; gap:11px; min-width:0}
+.brand .icon{width:44px; height:44px; flex:none; border-radius:23%; overflow:hidden;
+  background:var(--surface); box-shadow:0 0 0 1px var(--line)}
+.brand .icon img{width:100%;height:100%;object-fit:cover}
+.brand .word{font:800 25px/1 var(--font); letter-spacing:-.035em; white-space:nowrap}
+.brand .word i{font-style:normal; color:var(--accent)}
+.top-right{display:flex; align-items:center; gap:14px}
+.socials{display:flex; align-items:center; gap:6px}
+.socials a{display:grid; place-items:center; width:34px; height:34px; border-radius:11px;
+  color:var(--mut); transition:color .15s ease, background .15s ease}
+.socials a:hover{color:var(--txt); background:var(--muted)}
+.socials svg{width:19px;height:19px}
+.langs{display:flex; gap:2px; padding:3px; border-radius:99px; background:var(--muted)}
+.langs button{all:unset; cursor:pointer; padding:5px 10px; border-radius:99px;
+  font:700 11px/1 var(--font); letter-spacing:.04em; color:var(--mut)}
+.langs button.on{color:#fff; background:var(--accent)}
+.langs button:not(.on):hover{color:var(--txt)}
+@media (max-width:560px){ .top .socials{display:none} }
+
+/* ── hero ───────────────────────────────────────────────────────── */
+.hero{text-align:center; margin-top:clamp(30px,7vh,74px)}
+h1{font:800 clamp(32px,7.2vw,60px)/1.1 var(--font); letter-spacing:-.04em;
+  max-width:15ch; margin:0 auto}
+h1 mark{background:none; color:var(--accent)}
+/* The accented phrase and its trailing punctuation stay on one line — a break
+   inside them ("…in 3" / "seconds.") reads as a typo rather than a headline. */
+h1 .h1-end{white-space:nowrap}
+.sub{margin:clamp(14px,2.4vh,24px) auto 0; max-width:48ch; color:var(--mut);
+  font:400 clamp(14px,1.6vw,18px)/1.55 var(--font)}
+
+/* ── store badge ────────────────────────────────────────────────── */
+.badges{display:flex; justify-content:center; flex-wrap:wrap;
+  gap:12px; margin-top:clamp(18px,3vh,30px)}
+.badge{display:flex; align-items:center; gap:11px;
+  height:clamp(52px,6.4vh,60px); padding:0 clamp(18px,2vw,24px);
+  background:var(--txt); color:var(--bg); border-radius:99px;
+  transition:transform .12s ease, opacity .15s ease;
+  -webkit-tap-highlight-color:transparent}
+.badge:hover{opacity:.88}
+.badge:active{transform:scale(.98)}
+.badge svg{width:clamp(21px,2.4vw,25px);height:auto;flex:none}
+.badge .lbl{display:flex; flex-direction:column; line-height:1; text-align:left}
+.badge .lbl small{font:500 clamp(8.5px,.95vw,10.5px)/1 var(--font);
+  letter-spacing:.03em; text-transform:uppercase; opacity:.78}
+.badge .lbl b{font:700 clamp(16px,1.9vw,20px)/1.15 var(--font); letter-spacing:-.02em; margin-top:3px}
+.trial{margin-top:12px; color:var(--dim); font:500 12.5px/1.4 var(--font)}
+
+/* ── Instagram in-app-browser helper ────────────────────────────── */
+.iab{display:grid; grid-template-columns:24px 1fr; gap:11px; align-items:center;
+  width:100%; max-width:430px; margin:14px auto 0; text-align:left;
+  padding:11px 15px; border-radius:16px; background:var(--muted);
+  transition:background .35s ease, box-shadow .35s ease}
+.iab.armed{background:var(--accent-soft); box-shadow:inset 0 0 0 1.5px var(--accent)}
+.iab-arrow{width:24px;height:24px;color:var(--mut);animation:nudge 2.8s ease-in-out infinite}
+.iab.armed .iab-arrow{color:var(--accent)}
+@keyframes nudge{0%,100%{transform:translate(0,0)}45%{transform:translate(2px,-3px)}}
+.iab-title{font:700 13px/1.3 var(--font); display:flex; align-items:center; gap:5px; flex-wrap:wrap}
+.iab-body{margin-top:2px; font:400 11.5px/1.35 var(--font); color:var(--mut)}
+.dots{display:inline-block; padding:0 6px; border-radius:6px; background:var(--surface);
+  box-shadow:0 0 0 1px var(--line); font:800 11px/16px var(--font); letter-spacing:1px}
+
+/* ── hero phone row ─────────────────────────────────────────────── */
+.shots{position:relative; margin-top:clamp(26px,5vh,56px);
+  display:flex; justify-content:center; align-items:flex-start; gap:clamp(14px,2vw,30px)}
+/* Capped well under the capture's own point size — these are 3x grabs, so the
+   ceiling is a third of 1030px. */
+.shots img{width:clamp(122px,13.2vw,158px); height:auto; flex:none;
+  filter:drop-shadow(0 20px 34px rgba(28,28,30,.22))}
+@media (prefers-color-scheme:dark){
+  .shots img{filter:drop-shadow(0 20px 34px rgba(0,0,0,.6))}
+}
+/* On phones the row deliberately bleeds past both edges so the middle screen
+   stays big and legible; side fades keep the cut soft. */
+@media (max-width:760px){
+  .shots{
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 86%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 86%,transparent 100%);
+  }
+}
+
+/* ── ratings + reviews (hidden until the thresholds in CONFIG) ──── */
+.ratings{display:flex; justify-content:center; align-items:center; gap:14px}
+.ratings .r-badge{width:40px;height:40px;flex:none;color:var(--txt);opacity:.9}
+.ratings .r-col{text-align:left}
+.ratings .r-score{font:800 21px/1 var(--font)}
+.ratings .r-score span{color:var(--mut); font-weight:600}
+.rstars{display:flex; gap:2px; margin-top:5px}
+.rstars svg{width:15px;height:15px;fill:#FFC83D}
+.ratings .r-cap{display:block; margin-top:5px; font:500 12px/1 var(--font); color:var(--mut);
+  text-decoration:underline; text-underline-offset:3px}
+.reviews{display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,1.8vw,22px)}
+.review{border-radius:20px; background:var(--surface); box-shadow:var(--shadow);
+  padding:clamp(18px,2.4vw,26px); display:flex; flex-direction:column; gap:11px}
+.review .head{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.review .head b{font:700 clamp(15px,1.7vw,18px)/1.2 var(--font); letter-spacing:-.01em}
+.review .stars5{display:flex; gap:2px; flex:none}
+.review .stars5 svg{width:14px;height:14px;fill:#FFC83D}
+.review p{color:var(--mut); font:400 clamp(13.5px,1.4vw,15px)/1.55 var(--font); flex:1}
+.review .who{align-self:flex-end; font:500 12.5px/1 var(--font); color:var(--dim)}
+@media (max-width:760px){ .reviews{grid-template-columns:1fr} }
+
+/* ── three ways to capture ──────────────────────────────────────── */
+.ways{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,1.8vw,22px);
+  margin-top:clamp(26px,4vh,44px)}
+.way{border-radius:22px; background:var(--surface); box-shadow:var(--shadow);
+  padding:clamp(22px,2.6vw,30px)}
+.way .ic{width:46px; height:46px; border-radius:15px; display:grid; place-items:center;
+  background:var(--accent-soft); color:var(--accent)}
+.way .ic svg{width:23px;height:23px}
+.way b{display:block; margin-top:16px;
+  font:700 clamp(17px,1.9vw,21px)/1.2 var(--font); letter-spacing:-.02em}
+.way p{margin-top:8px; color:var(--mut); font:400 clamp(13.5px,1.4vw,15px)/1.55 var(--font)}
+.way .said{display:inline-block; margin-top:12px; padding:7px 13px; border-radius:99px;
+  background:var(--muted); color:var(--txt); font:500 13px/1.3 var(--font)}
+@media (max-width:820px){ .ways{grid-template-columns:1fr} }
+
+/* ── how it works ───────────────────────────────────────────────── */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2.4vw,32px);
+  margin-top:clamp(26px,4vh,44px); counter-reset:step}
+.step{counter-increment:step; position:relative; padding-top:16px}
+.step::before{content:counter(step); display:grid; place-items:center;
+  width:34px; height:34px; border-radius:50%; background:var(--accent); color:#fff;
+  font:700 15px/1 var(--font)}
+.step b{display:block; margin-top:16px; font:700 clamp(16px,1.8vw,19px)/1.25 var(--font);
+  letter-spacing:-.02em}
+.step p{margin-top:7px; color:var(--mut); font:400 clamp(13.5px,1.4vw,15px)/1.55 var(--font)}
+@media (max-width:820px){ .steps{grid-template-columns:1fr; gap:22px} }
+
+/* ── showcase ───────────────────────────────────────────────────── */
+.showcase{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,40px);
+  margin-top:clamp(30px,5vh,54px)}
+.show{text-align:center}
+.show img{width:100%; max-width:264px; height:auto; margin:0 auto;
+  filter:drop-shadow(0 20px 34px rgba(28,28,30,.2))}
+@media (prefers-color-scheme:dark){
+  .show img{filter:drop-shadow(0 20px 34px rgba(0,0,0,.6))}
+}
+.show b{display:block; margin-top:22px; font:700 clamp(16px,1.8vw,19px)/1.25 var(--font);
+  letter-spacing:-.02em}
+.show p{margin-top:7px; color:var(--mut); font:400 clamp(13.5px,1.4vw,15px)/1.55 var(--font)}
+@media (max-width:820px){
+  .showcase{grid-template-columns:1fr; gap:44px}
+  .show img{max-width:216px}
+}
+
+/* ── feature grid ───────────────────────────────────────────────── */
+.fgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(12px,1.5vw,18px);
+  margin-top:clamp(26px,4vh,44px)}
+.fcard{border-radius:18px; background:var(--surface); box-shadow:var(--shadow);
+  padding:clamp(18px,2vw,24px)}
+.fcard svg{width:23px;height:23px;color:var(--accent)}
+.fcard b{display:block; margin-top:13px;
+  font:700 clamp(14.5px,1.5vw,16.5px)/1.25 var(--font); letter-spacing:-.015em}
+.fcard p{margin-top:6px; color:var(--mut); font:400 clamp(12.5px,1.3vw,13.5px)/1.5 var(--font)}
+@media (max-width:940px){ .fgrid{grid-template-columns:1fr 1fr} }
+@media (max-width:480px){ .fgrid{grid-template-columns:1fr} }
+
+/* ── privacy band ───────────────────────────────────────────────── */
+.privacy{border-radius:28px; background:var(--surface); box-shadow:var(--shadow);
+  padding:clamp(30px,4.5vw,58px); text-align:center}
+.privacy .ic{width:52px; height:52px; margin:0 auto; border-radius:17px; display:grid;
+  place-items:center; background:var(--accent-soft); color:var(--accent)}
+.privacy .ic svg{width:26px;height:26px}
+.privacy h2{margin-top:20px}
+.privacy .lede{margin-left:auto; margin-right:auto}
+.pills{display:flex; justify-content:center; flex-wrap:wrap; gap:9px; margin-top:24px}
+.pills span{padding:8px 15px; border-radius:99px; background:var(--muted);
+  color:var(--mut); font:500 13px/1.3 var(--font)}
+
+/* ── plans ──────────────────────────────────────────────────────── */
+.plans{display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,1.8vw,22px);
+  margin-top:clamp(26px,4vh,44px)}
+.plan{border-radius:22px; background:var(--surface); box-shadow:var(--shadow);
+  padding:clamp(24px,2.8vw,34px)}
+.plan b{font:700 clamp(18px,2vw,22px)/1.2 var(--font); letter-spacing:-.02em}
+.plan .who{margin-top:6px; color:var(--mut); font:400 14px/1.5 var(--font)}
+.plan ul{list-style:none; margin-top:18px; display:flex; flex-direction:column; gap:10px}
+.plan li{display:grid; grid-template-columns:19px 1fr; gap:10px; align-items:start;
+  color:var(--mut); font:400 14px/1.5 var(--font)}
+.plan li svg{width:19px;height:19px;color:var(--accent);margin-top:2px}
+.plan .note{margin-top:20px; padding-top:18px; border-top:1px solid var(--line);
+  color:var(--dim); font:500 12.5px/1.5 var(--font)}
+@media (max-width:820px){ .plans{grid-template-columns:1fr} }
+
+/* ── FAQ ────────────────────────────────────────────────────────── */
+.faq{margin-top:clamp(26px,4vh,40px); max-width:800px}
+.faq details{border-radius:16px; background:var(--surface); box-shadow:var(--shadow);
+  padding:4px 20px; margin-bottom:10px}
+.faq summary{cursor:pointer; list-style:none; padding:17px 30px 17px 0; position:relative;
+  font:600 clamp(14.5px,1.5vw,16.5px)/1.4 var(--font); letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:''; position:absolute; right:4px; top:50%; width:9px; height:9px;
+  border-right:2px solid var(--mut); border-bottom:2px solid var(--mut);
+  transform:translateY(-70%) rotate(45deg); transition:transform .2s ease}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq details p{padding:0 0 18px; color:var(--mut);
+  font:400 clamp(13.5px,1.4vw,15px)/1.6 var(--font)}
+
+/* ── bottom CTA ─────────────────────────────────────────────────── */
+.cta2{text-align:center}
+.cta2 p{margin:12px auto 0; max-width:46ch; color:var(--mut);
+  font:400 clamp(14px,1.5vw,17px)/1.55 var(--font)}
+
+/* ── footer ─────────────────────────────────────────────────────── */
+.foot{margin-top:clamp(64px,12vh,120px); border-top:1px solid var(--line);
+  padding:26px 0 calc(28px + env(safe-area-inset-bottom))}
+.foot .row{display:flex; align-items:center; justify-content:space-between;
+  gap:16px; flex-wrap:wrap}
+.foot .left{display:flex; align-items:center; gap:10px}
+.foot .left .icon{width:30px;height:30px;border-radius:24%;overflow:hidden}
+.foot .left .icon img{width:100%;height:100%;object-fit:cover}
+.foot .left b{font:800 15px/1 var(--font); letter-spacing:-.03em}
+.foot .links{display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+  font:500 12.5px/1 var(--font); color:var(--mut)}
+.foot .links a:hover{color:var(--txt)}
+.foot .copy{margin-top:16px; font:400 11.5px/1.5 var(--font); color:var(--dim)}
+
+/* ── short viewports (Instagram's in-app browser is ~560pt tall) ────
+   Tighten everything above the badge so the store button and the escape-hatch
+   helper are on screen without scrolling. */
+@media (max-height:680px){
+  .top{padding-top:14px}
+  .brand .icon{width:38px;height:38px}
+  .brand .word{font-size:22px}
+  .hero{margin-top:18px}
+  h1{font-size:clamp(26px,7vw,34px)}
+  .sub{margin-top:11px; font-size:13px; max-width:38ch}
+  .badges{margin-top:15px}
+  .trial{margin-top:9px}
+  .shots{margin-top:20px}
+}
+@media (max-height:600px){ .sub{display:none} }
+@media (max-height:500px){ .iab-body{display:none} }
+
+/* ?frame=1 — dev aid: clamp to the 375×560 Instagram viewport */
+body.framed{padding:20px;display:flex;justify-content:center;align-items:flex-start;
+  background:#101014}
+body.framed .site{width:375px;height:560px;overflow-y:auto;outline:1px dashed #2C2C2E;
+  background:var(--bg)}
+</style>
+</head>
+<body>
+<div class="site">
+
+  <header class="top wrap r1">
+    <a class="brand" href="./">
+      <span class="icon" id="icon-top"></span>
+      <span class="word">Spent<i>.</i></span>
+    </a>
+    <span class="top-right">
+      <span class="socials" id="soc-top"></span>
+      <span class="langs" id="langs"></span>
+    </span>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <h1 class="r2">
+        <span data-t="h1a"></span>
+        <span class="h1-end"><mark data-t="h1m"></mark><span data-t="h1z"></span></span>
+      </h1>
+      <p class="sub r3" data-t="sub"></p>
+
+      <div class="badges r4" id="badges-hero"></div>
+      <p class="trial r4" data-t="trial"></p>
+
+      <div class="iab r4" id="iab" hidden>
+        <span class="iab-arrow" aria-hidden="true">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 21.5C4.5 12.6 9.6 6.2 20 4.6"/><path d="M15.3 3.3 20.6 4.5 19.4 9.8"/>
+          </svg>
+        </span>
+        <div>
+          <p class="iab-title">
+            <span data-t="iabTapWord"></span><span class="dots">•••</span><span data-t="iabOpenWord"></span>
+          </p>
+          <p class="iab-body" data-t="iabBody"></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="shots r5" id="shots" aria-hidden="true"></div>
+
+    <section class="ratings wrap reveal" id="ratings" hidden></section>
+    <section class="reviews wrap reveal" id="reviews" hidden></section>
+
+    <section class="wrap reveal" id="ways-sec">
+      <p class="eyebrow" data-t="waysKicker"></p>
+      <h2 data-t="waysTitle"></h2>
+      <p class="lede" data-t="waysLede"></p>
+      <div class="ways" id="ways"></div>
+    </section>
+
+    <section class="wrap reveal" id="how-sec">
+      <p class="eyebrow" data-t="howKicker"></p>
+      <h2 data-t="howTitle"></h2>
+      <p class="lede" data-t="howLede"></p>
+      <div class="steps" id="steps"></div>
+    </section>
+
+    <section class="wrap reveal" id="show-sec">
+      <p class="eyebrow" data-t="showKicker"></p>
+      <h2 data-t="showTitle"></h2>
+      <p class="lede" data-t="showLede"></p>
+      <div class="showcase" id="showcase"></div>
+    </section>
+
+    <section class="wrap reveal" id="feat-sec">
+      <p class="eyebrow" data-t="featKicker"></p>
+      <h2 data-t="featTitle"></h2>
+      <p class="lede" data-t="featLede"></p>
+      <div class="fgrid" id="fgrid"></div>
+    </section>
+
+    <section class="wrap reveal">
+      <div class="privacy">
+        <span class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.8 20 6v6c0 4.6-3.3 7.9-8 9.2C7.3 19.9 4 16.6 4 12V6z"/>
+            <path d="m8.8 12.1 2.2 2.2 4.2-4.4"/>
+          </svg>
+        </span>
+        <h2 data-t="privTitle"></h2>
+        <p class="lede" data-t="privLede"></p>
+        <div class="pills" id="priv-pills"></div>
+      </div>
+    </section>
+
+    <section class="wrap reveal" id="plans-sec">
+      <p class="eyebrow" data-t="planKicker"></p>
+      <h2 data-t="planTitle"></h2>
+      <p class="lede" data-t="planLede"></p>
+      <div class="plans" id="plans"></div>
+    </section>
+
+    <section class="wrap reveal" id="faq-sec">
+      <p class="eyebrow" data-t="faqKicker"></p>
+      <h2 data-t="faqTitle"></h2>
+      <div class="faq" id="faq"></div>
+    </section>
+
+    <section class="cta2 wrap reveal">
+      <h2 data-t="ct"></h2>
+      <p data-t="cb"></p>
+      <div class="badges" id="badges-bottom"></div>
+      <p class="trial" data-t="trial"></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="row">
+        <span class="left">
+          <span class="icon" id="icon-foot"></span><b>Spent</b>
+        </span>
+        <span class="links" id="foot-links"></span>
+        <span class="socials" id="soc-foot"></span>
+      </div>
+      <p class="copy" id="copy"></p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+/* ══ strings ════════════════════════════════════════════════════════
+   The headline is three slots — lead, accented, tail — because the accented
+   words do not land in the same place in every language ("3 soniyada" sits in
+   the middle of the Uzbek sentence, at the end of the English one). */
+var STR = {
+  en:{
+    h1a:'Log a spend in', h1m:'3 seconds', h1z:'.',
+    sub:'Point your camera, say the amount, or just type it — Spent’s AI fills in the merchant, amount, date and category.',
+    trial:'Free to download · 7-day trial · Cancel anytime',
+    iabTapWord:'Tap', iabOpenWord:'→ Open in browser',
+    iabBody:'Use the menu at the top right if the App Store did not open.',
+    iabBodyArmed:'Still here? Open that menu, then choose “Open in browser”.',
+    badgeApple:'Download on the', storeIos:'App Store',
+    ratingCap:'ratings on the App Store',
+    reviews:[],
+
+    waysKicker:'Capture', waysTitle:'Three ways to log a spend',
+    waysLede:'Most trackers make you type. Spent leads with capture, so logging a purchase never becomes a chore you skip.',
+    ways:[
+      {i:'camera', t:'Snap a receipt',
+       b:'Point your camera — no typing, no fuss. The AI reads the merchant, total, date, category and even the line items.'},
+      {i:'mic', t:'Just say it',
+       b:'Say the amount out loud and Spent turns it into a clean, categorised transaction.', s:'“Coffee, 45 thousand”'},
+      {i:'keyboard', t:'Or type it',
+       b:'Prefer to tap? A fast type-over-placeholder entry gets a spend logged in a couple of seconds.'}
+    ],
+
+    howKicker:'How it works', howTitle:'Capture, confirm, done',
+    howLede:'The receipt-to-transaction flow is the whole app in three steps.',
+    steps:[
+      {t:'Capture', b:'Photograph the receipt, say it out loud, or type it. Camera or photo library both work.'},
+      {t:'The AI fills it in', b:'Merchant, amount, date, category and line items come back pre-filled, with a confidence flag.'},
+      {t:'Save', b:'Glance over it and tap save. The hero total and the chart update instantly.'}
+    ],
+
+    showKicker:'Understand', showTitle:'See where your money goes',
+    showLede:'One glanceable home screen. Everything deeper opens as a clean sheet, never a maze of tabs.',
+    shows:[
+      {img:'s-home.webp', t:'One screen, everything',
+       b:'A hero total, a category bar chart and a day-grouped list of what you spent.'},
+      {img:'s-insights.webp', t:'Know your habits',
+       b:'A category donut with each slice’s share and how it moved against last period.'},
+      {img:'s-currency.webp', t:'Any currency',
+       b:'Log what you actually spent — Spent converts it to your base currency automatically.'}
+    ],
+
+    featKicker:'Everything else', featTitle:'Built for real spending',
+    featLede:'The details that keep a tracker usable past the first week.',
+    features:[
+      {i:'chart',  t:'Insights that add up',  b:'Category donut, period-over-period trends, and a total for every period you swipe to.'},
+      {i:'target', t:'Budgets that nudge',    b:'Per-category caps with subtle progress meters and a gentle nudge before you overspend.'},
+      {i:'globe',  t:'Multi-currency',        b:'Automatic exchange-rate conversion to your base currency, with precise decimal money.'},
+      {i:'tag',    t:'Tags & categories',     b:'Emoji category avatars, make your own, and tag any transaction for later.'},
+      {i:'lists',  t:'Separate lists',        b:'Personal, Family and Business side by side — switch, share or start a new one.'},
+      {i:'repeat', t:'Recurring spends',      b:'Set a repeat rule once and the subscription logs itself every period.'},
+      {i:'export', t:'Export a period',       b:'Send any period out as CSV or PDF when you need it somewhere else.'},
+      {i:'bell',   t:'Gentle reminders',      b:'A daily ping, a weekly summary and big-spend alerts. Spent only pings when it helps.'}
+    ],
+
+    privTitle:'Private, and yours', privLede:'Spent is local-first: your data lives on your device and syncs to your own private account. Fully usable offline — the network is an enhancement, never a gate.',
+    privPills:['Works offline','No sign-in wall','Your data stays yours','Optional Apple sign-in'],
+
+    planKicker:'Plans', planTitle:'Free to start. Premium when you want it.',
+    planLede:'Every plan opens with a 7-day free trial. Yearly costs less than monthly, and the App Store shows the price in your own currency before anything is charged.',
+    plans:[
+      {t:'Single', w:'For one person',
+       f:['Unlimited AI receipt scans','Unlimited voice capture','Insights, budgets and export','Private cloud sync']},
+      {t:'Family', w:'For a household',
+       f:['Everything in Single','Shared lists across the family','Personal, Family and Business lists','One subscription for everyone']}
+    ],
+    planNote:'No payment due today · Cancel anytime',
+
+    faqKicker:'FAQ', faqTitle:'Questions, answered',
+    faq:[
+      {q:'Do I have to type everything?', a:'No. Snap a receipt or say it out loud and the AI fills in the merchant, amount, date and category. Typing is there when you prefer it, not because you have to.'},
+      {q:'Does it work offline?', a:'Yes. Spent is local-first, so everything you log is stored on your device straight away and syncs privately once you are back online.'},
+      {q:'Do I need an account?', a:'No sign-in wall — you can start logging immediately. Sign in with Apple later if you want your data on more than one device.'},
+      {q:'Is my data private?', a:'Your data lives on your device first and syncs to your own private account. It is never shared with other users, and receipt images are readable only by you.'},
+      {q:'What about different currencies?', a:'Spend in whatever currency you like. Spent stores the original amount and converts it to your base currency at the day’s rate.'},
+      {q:'Can my family share it?', a:'Yes — shared lists and a Family plan let a household keep Personal, Family and Business spending apart while staying in sync.'},
+      {q:'Which devices does it run on?', a:'Spent is a native iPhone app and needs iOS 26.4 or later. There is no Android or web version.'}
+    ],
+
+    ct:'Start tracking today', cb:'Free to download. Snap your first receipt in under a minute.',
+    privacy:'Privacy', terms:'Terms',
+    copy:'© 2026 SummerApps · Spent — AI expense tracker for iPhone'
+  },
+
+  ru:{
+    h1a:'Записывайте трату за', h1m:'3 секунды', h1z:'.',
+    sub:'Наведите камеру, произнесите сумму или просто напишите — ИИ Spent заполнит магазин, сумму, дату и категорию.',
+    trial:'Скачать бесплатно · 7 дней пробного периода · Отмена в любой момент',
+    iabTapWord:'Нажмите', iabOpenWord:'→ «Открыть в браузере»',
+    iabBody:'Если App Store не открылся, откройте меню в правом верхнем углу.',
+    iabBodyArmed:'Ничего не произошло? Откройте это меню и выберите «Открыть в браузере».',
+    badgeApple:'Загрузить в', storeIos:'App Store',
+    ratingCap:'оценок в App Store',
+    reviews:[],
+
+    waysKicker:'Запись', waysTitle:'Три способа записать трату',
+    waysLede:'Обычные трекеры заставляют печатать. Spent начинает с захвата — поэтому запись покупки не превращается в рутину, которую хочется пропустить.',
+    ways:[
+      {i:'camera', t:'Сфотографируйте чек',
+       b:'Наведите камеру — печатать не нужно. ИИ распознает магазин, сумму, дату, категорию и даже позиции чека.'},
+      {i:'mic', t:'Просто скажите',
+       b:'Произнесите сумму вслух, и Spent превратит фразу в аккуратную транзакцию с категорией.', s:'«Кофе, 45 тысяч»'},
+      {i:'keyboard', t:'Или напишите',
+       b:'Удобнее вручную? Поля заполняются поверх подсказок, так что трата записывается за пару секунд.'}
+    ],
+
+    howKicker:'Как это работает', howTitle:'Снял, проверил, готово',
+    howLede:'Путь от чека до транзакции — это и есть всё приложение, в три шага.',
+    steps:[
+      {t:'Захват', b:'Сфотографируйте чек, произнесите вслух или напишите. Подойдёт и камера, и фото из галереи.'},
+      {t:'ИИ заполняет', b:'Магазин, сумма, дата, категория и позиции возвращаются уже заполненными — с отметкой уверенности.'},
+      {t:'Сохранение', b:'Проверьте одним взглядом и нажмите сохранить. Сумма и график обновятся мгновенно.'}
+    ],
+
+    showKicker:'Аналитика', showTitle:'Видно, куда уходят деньги',
+    showLede:'Один понятный экран. Всё остальное открывается аккуратной шторкой, а не лабиринтом вкладок.',
+    shows:[
+      {img:'s-home.webp', t:'Один экран — и всё видно',
+       b:'Крупная сумма, график по категориям и список трат, сгруппированный по дням.'},
+      {img:'s-insights.webp', t:'Понятные привычки',
+       b:'Кольцевая диаграмма с долей каждой категории и изменением к прошлому периоду.'},
+      {img:'s-currency.webp', t:'Любая валюта',
+       b:'Записывайте в той валюте, в которой потратили — Spent пересчитает в основную сам.'}
+    ],
+
+    featKicker:'И это ещё не всё', featTitle:'Сделано под реальные траты',
+    featLede:'Детали, из-за которых трекером продолжают пользоваться и после первой недели.',
+    features:[
+      {i:'chart',  t:'Наглядная аналитика',   b:'Диаграмма по категориям, динамика к прошлому периоду и своя сумма у каждого периода.'},
+      {i:'target', t:'Бюджеты с подсказками', b:'Лимиты по категориям, спокойные индикаторы прогресса и мягкое напоминание до перерасхода.'},
+      {i:'globe',  t:'Мультивалютность',      b:'Автоматический пересчёт по курсу в основную валюту и точная десятичная арифметика.'},
+      {i:'tag',    t:'Теги и категории',      b:'Категории с эмодзи, свои собственные и теги для любой транзакции.'},
+      {i:'lists',  t:'Отдельные списки',      b:'Личный, семейный и рабочий рядом — переключайтесь, делитесь или создавайте новый.'},
+      {i:'repeat', t:'Повторяющиеся траты',   b:'Задайте правило один раз — и подписка будет записываться сама каждый период.'},
+      {i:'export', t:'Экспорт периода',       b:'Выгрузите любой период в CSV или PDF, когда данные нужны где-то ещё.'},
+      {i:'bell',   t:'Спокойные напоминания', b:'Напоминание за день, сводка за неделю и сигнал о крупной трате — и ничего лишнего.'}
+    ],
+
+    privTitle:'Приватно и только ваше', privLede:'Spent работает локально: данные хранятся на устройстве и синхронизируются в ваш собственный приватный аккаунт. Приложение полностью работает офлайн — сеть только помогает, но ничего не блокирует.',
+    privPills:['Работает офлайн','Без обязательной регистрации','Данные остаются вашими','Вход через Apple — по желанию'],
+
+    planKicker:'Тарифы', planTitle:'Начните бесплатно. Premium — когда захотите.',
+    planLede:'Любой тариф начинается с 7 дней бесплатно. Годовой выгоднее месячного, а цену в вашей валюте App Store покажет до любого списания.',
+    plans:[
+      {t:'Single', w:'Для одного человека',
+       f:['Без ограничений на сканирование чеков','Без ограничений на голосовой ввод','Аналитика, бюджеты и экспорт','Приватная облачная синхронизация']},
+      {t:'Family', w:'Для семьи',
+       f:['Всё из тарифа Single','Общие списки для всей семьи','Личный, семейный и рабочий списки','Одна подписка на всех']}
+    ],
+    planNote:'Сегодня платить не нужно · Отмена в любой момент',
+
+    faqKicker:'Вопросы', faqTitle:'Коротко о главном',
+    faq:[
+      {q:'Обязательно всё вводить вручную?', a:'Нет. Сфотографируйте чек или скажите вслух — ИИ сам заполнит магазин, сумму, дату и категорию. Ручной ввод остаётся как выбор, а не как необходимость.'},
+      {q:'Работает ли офлайн?', a:'Да. Spent хранит данные локально, поэтому запись сохраняется сразу на устройстве и синхронизируется приватно, когда связь появится.'},
+      {q:'Нужен ли аккаунт?', a:'Регистрация не требуется — можно начать сразу. Вход через Apple понадобится только чтобы данные были на нескольких устройствах.'},
+      {q:'Мои данные приватны?', a:'Данные сначала живут на вашем устройстве и синхронизируются в ваш личный аккаунт. Они не видны другим пользователям, а фото чеков доступны только вам.'},
+      {q:'А если траты в разных валютах?', a:'Записывайте в любой валюте. Spent сохранит исходную сумму и пересчитает её в основную валюту по курсу дня.'},
+      {q:'Можно пользоваться семьёй?', a:'Да — общие списки и тариф Family позволяют держать личные, семейные и рабочие траты раздельно, но синхронно.'},
+      {q:'На каких устройствах работает?', a:'Spent — нативное приложение для iPhone, нужен iOS 26.4 или новее. Версий для Android и для веба нет.'}
+    ],
+
+    ct:'Начните сегодня', cb:'Скачайте бесплатно и снимите первый чек меньше чем за минуту.',
+    privacy:'Конфиденциальность', terms:'Условия',
+    copy:'© 2026 SummerApps · Spent — ИИ-трекер расходов для iPhone'
+  },
+
+  uz:{
+    h1a:'Xarajatni', h1m:'3 soniyada', h1z:' yozing.',
+    sub:'Kamerani qarating, summani ayting yoki shunchaki yozing — Spent AI do‘kon, summa, sana va turkumni o‘zi to‘ldiradi.',
+    trial:'Bepul yuklab olish · 7 kunlik sinov · Istalgan vaqtda bekor qilish',
+    iabTapWord:'Bosing', iabOpenWord:'→ “Brauzerda ochish”',
+    iabBody:'App Store ochilmasa, yuqori o‘ng burchakdagi menyudan foydalaning.',
+    iabBodyArmed:'Hech narsa bo‘lmadimi? Shu menyuni ochib, “Brauzerda ochish”ni tanlang.',
+    badgeApple:'Yuklab olish', storeIos:'App Store',
+    ratingCap:'ta baho — App Store',
+    reviews:[],
+
+    waysKicker:'Yozib olish', waysTitle:'Xarajatni yozishning uch yo‘li',
+    waysLede:'Ko‘p trekerlar yozishga majbur qiladi. Spent esa yozib olishdan boshlaydi — shuning uchun xarajatni kiritish tashlab ketiladigan yumushga aylanmaydi.',
+    ways:[
+      {i:'camera', t:'Chekni suratga oling',
+       b:'Kamerani qarating — yozish shart emas. AI do‘kon, summa, sana, turkum va hatto chek qatorlarini o‘qiydi.'},
+      {i:'mic', t:'Shunchaki ayting',
+       b:'Summani ovoz chiqarib ayting — Spent uni toza, turkumlangan tranzaksiyaga aylantiradi.', s:'“Kofe, 45 ming”'},
+      {i:'keyboard', t:'Yoki yozing',
+       b:'Qo‘lda kiritish qulayroqmi? Maydonlar ustiga yozish bilan xarajat bir necha soniyada saqlanadi.'}
+    ],
+
+    howKicker:'Qanday ishlaydi', howTitle:'Oling, tasdiqlang, tayyor',
+    howLede:'Chekdan tranzaksiyagacha bo‘lgan yo‘l — bu butun ilova, uch qadamda.',
+    steps:[
+      {t:'Yozib oling', b:'Chekni suratga oling, ovoz chiqarib ayting yoki yozing. Kamera ham, galereya ham ishlaydi.'},
+      {t:'AI to‘ldiradi', b:'Do‘kon, summa, sana, turkum va chek qatorlari to‘ldirilgan holda qaytadi — ishonch belgisi bilan.'},
+      {t:'Saqlang', b:'Bir qarab chiqing va saqlashni bosing. Umumiy summa va grafik darhol yangilanadi.'}
+    ],
+
+    showKicker:'Tahlil', showTitle:'Pulingiz qayerga ketayotgani ko‘rinadi',
+    showLede:'Bitta tushunarli asosiy ekran. Qolgani toza oyna bo‘lib ochiladi — ilovada chalkash bo‘limlar yo‘q.',
+    shows:[
+      {img:'s-home.webp', t:'Bitta ekran — hammasi shu yerda',
+       b:'Katta umumiy summa, turkumlar grafigi va kunlar bo‘yicha guruhlangan xarajatlar ro‘yxati.'},
+      {img:'s-insights.webp', t:'Odatlaringizni biling',
+       b:'Har bir turkumning ulushi va o‘tgan davrga nisbatan o‘zgarishi ko‘rsatilgan doiraviy diagramma.'},
+      {img:'s-currency.webp', t:'Istalgan valyuta',
+       b:'Qaysi valyutada sarflagan bo‘lsangiz, shunday yozing — Spent asosiy valyutangizga o‘zi o‘giradi.'}
+    ],
+
+    featKicker:'Yana nimalar bor', featTitle:'Haqiqiy xarajatlar uchun',
+    featLede:'Trekerdan birinchi haftadan keyin ham foydalanishda davom etiladigan tafsilotlar.',
+    features:[
+      {i:'chart',  t:'Tushunarli tahlil',     b:'Turkumlar diagrammasi, o‘tgan davrga nisbatan o‘zgarish va har bir davrning o‘z summasi.'},
+      {i:'target', t:'Ogohlantiruvchi byudjet',b:'Turkum bo‘yicha chegara, sokin progress ko‘rsatkichlari va ortiqcha sarfdan oldin yumshoq eslatma.'},
+      {i:'globe',  t:'Ko‘p valyutalilik',     b:'Kurs bo‘yicha asosiy valyutaga avtomatik o‘girish va aniq o‘nlik hisob-kitob.'},
+      {i:'tag',    t:'Teg va turkumlar',      b:'Emoji turkumlar, o‘zingiznikini yaratish va istalgan tranzaksiyaga teg qo‘yish.'},
+      {i:'lists',  t:'Alohida ro‘yxatlar',    b:'Shaxsiy, oilaviy va ishga oid ro‘yxatlar yonma-yon — almashtiring, ulashing yoki yangisini oching.'},
+      {i:'repeat', t:'Takrorlanuvchi to‘lov', b:'Qoidani bir marta belgilang — obuna har davrda o‘zi yozilib boradi.'},
+      {i:'export', t:'Davrni eksport qilish', b:'Istalgan davrni CSV yoki PDF ko‘rinishida yuklab oling.'},
+      {i:'bell',   t:'Yumshoq eslatmalar',    b:'Kunlik eslatma, haftalik hisobot va katta xarajat haqida signal — ortiqchasi yo‘q.'}
+    ],
+
+    privTitle:'Maxfiy va faqat sizniki', privLede:'Spent avvalo qurilmada ishlaydi: ma’lumotlar telefoningizda saqlanadi va faqat sizning shaxsiy hisobingizga sinxronlanadi. Ilova internetsiz ham to‘liq ishlaydi — tarmoq faqat qo‘shimcha imkoniyat.',
+    privPills:['Internetsiz ishlaydi','Ro‘yxatdan o‘tish shart emas','Ma’lumot sizniki bo‘lib qoladi','Apple orqali kirish — ixtiyoriy'],
+
+    planKicker:'Tariflar', planTitle:'Bepul boshlang. Premium — o‘zingiz xohlaganda.',
+    planLede:'Har bir tarif 7 kunlik bepul sinovdan boshlanadi. Yillik tarif oylikdan arzonroq, narxni esa App Store o‘z valyutangizda, hech narsa yechilmasdan oldin ko‘rsatadi.',
+    plans:[
+      {t:'Single', w:'Bir kishi uchun',
+       f:['Cheksiz chek skaneri','Cheksiz ovozli kiritish','Tahlil, byudjet va eksport','Maxfiy bulutli sinxronlash']},
+      {t:'Family', w:'Oila uchun',
+       f:['Single tarifidagi hamma narsa','Oila bo‘ylab umumiy ro‘yxatlar','Shaxsiy, oilaviy va ishga oid ro‘yxatlar','Hammaga bitta obuna']}
+    ],
+    planNote:'Bugun to‘lov yo‘q · Istalgan vaqtda bekor qilinadi',
+
+    faqKicker:'Savollar', faqTitle:'Qisqacha javoblar',
+    faq:[
+      {q:'Hammasini qo‘lda yozish kerakmi?', a:'Yo‘q. Chekni suratga oling yoki ovoz chiqarib ayting — AI do‘kon, summa, sana va turkumni o‘zi to‘ldiradi. Qo‘lda yozish esa majburiyat emas, tanlov bo‘lib qoladi.'},
+      {q:'Internetsiz ishlaydimi?', a:'Ha. Spent avvalo qurilmada ishlaydi, shuning uchun yozuv darhol telefoningizda saqlanadi va aloqa paydo bo‘lgach maxfiy sinxronlanadi.'},
+      {q:'Hisob qaydnomasi kerakmi?', a:'Ro‘yxatdan o‘tish shart emas — darhol boshlashingiz mumkin. Apple orqali kirish faqat ma’lumotni bir nechta qurilmada saqlash uchun kerak bo‘ladi.'},
+      {q:'Ma’lumotlarim maxfiymi?', a:'Ma’lumotlar avval qurilmangizda saqlanadi va sizning shaxsiy hisobingizga sinxronlanadi. Ular boshqa foydalanuvchilarga ko‘rinmaydi, chek rasmlarini esa faqat siz ochasiz.'},
+      {q:'Turli valyutalar-chi?', a:'Istalgan valyutada yozing. Spent asl summani saqlaydi va uni kun kursi bo‘yicha asosiy valyutangizga o‘giradi.'},
+      {q:'Oila bilan ishlata olamanmi?', a:'Ha — umumiy ro‘yxatlar va Family tarifi shaxsiy, oilaviy va ishga oid xarajatlarni alohida, ammo sinxron holda yuritish imkonini beradi.'},
+      {q:'Qaysi qurilmalarda ishlaydi?', a:'Spent — iPhone uchun mo‘ljallangan ilova, iOS 26.4 yoki undan yangirog‘i kerak. Android va veb versiyalari yo‘q.'}
+    ],
+
+    ct:'Bugundan boshlang', cb:'Bepul yuklab oling va birinchi chekingizni bir daqiqada suratga oling.',
+    privacy:'Maxfiylik', terms:'Shartlar',
+    copy:'© 2026 SummerApps · Spent — iPhone uchun AI xarajat trekeri'
+  }
+};
+
+/* ══ environment ════════════════════════════════════════════════════ */
+var q = new URLSearchParams(location.search);
+var h = new URLSearchParams(location.hash.replace(/^#/, ''));
+function param(k){ return q.get(k) || h.get(k) || ''; }
+
+var ua = navigator.userAgent || '';
+var isInsta  = /Instagram/i.test(ua);
+var isTikTok = /BytedanceWebview|TikTok|musical_ly|Bytedance/i.test(ua);
+var isMeta   = /FBAN|FBAV|FB_IAB|FBIOS|Messenger/i.test(ua);
+var isAppish = /Line|WhatsApp|Snapchat|Telegram|GSA/i.test(ua);
+var isIAB    = isInsta || isTikTok || isMeta || isAppish;
+var isIOS   = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+var isAndro = /Android/i.test(ua);
+
+var os    = param('os')    || (isIOS ? 'ios' : isAndro ? 'android' : 'other');
+var inIAB = param('state') ? param('state') === 'iab' : isIAB;
+var stored = '';
+try { stored = localStorage.getItem('spent_lang') || ''; } catch(e){}
+var browserLang = (navigator.language || 'en').slice(0,2).toLowerCase();
+var pinned = param('lang') || stored;   // explicit choice — geo must never override it
+var lang = (pinned || browserLang || 'en').slice(0,2).toLowerCase();
+if (!STR[lang]) lang = 'en';
+if (param('frame') === '1') document.body.className = 'framed';
+
+var T = STR[lang], C = CONFIG;
+
+/* ══ traffic source ═════════════════════════════════════════════════
+   `?src=` wins; otherwise infer from the referrer so untagged links still
+   attribute. Allowlisted — a raw query param must never reach a store URL. */
+var REF_MAP = [
+  [/instagram\./i, 'ig'], [/threads\./i, 'threads'], [/tiktok\./i, 'tiktok'],
+  [/youtube\.|youtu\.be/i, 'yt'], [/t\.me|telegram\./i, 'tg']
+];
+function clean(v){ v = (v || '').toLowerCase(); return C.srcPattern.test(v) ? v : ''; }
+
+/* Two levels, so channels AND individual creatives can be compared:
+     ?src=   WHERE it came from  — ig, tiktok, yt, tg, meta_traffic…
+     ?post=  WHICH creative      — reel_receipt, story_0815…  (?ad= is an alias)
+   e.g. /?src=ig&post=reel_receipt
+
+   Query params only, deliberately: a path-based /go/<src>/<post> scheme was
+   tried on CalFit and rejected. Cloudflare Web Analytics has no query-string
+   dimension, so every link here collapses into one "/" row — per-creative
+   numbers come from App Store Connect, which is where installs live anyway. */
+var src  = clean(param('src')) || (function(){
+  var ref = document.referrer || '';
+  for (var i = 0; i < REF_MAP.length; i++) if (REF_MAP[i][0].test(ref)) return REF_MAP[i][1];
+  return 'direct';
+})();
+var post = clean(param('post')) || clean(param('ad'));
+
+/* Apple gives exactly one free-form field (ct), so the two levels are PACKED
+   into it rather than blind-sliced: the channel is kept whole (it is the
+   dimension you always want) and the creative takes whatever room is left, cut
+   back to an underscore. A long name then degrades into a shorter readable one
+   instead of a mangled fragment like `ig_reel_rece` — which would otherwise
+   show up as its own campaign row in App Store Connect and never reconcile
+   with anything.
+
+   30, not 40: Apple documents the campaign token as "up to 30 alphanumeric
+   characters and spaces" plus a punctuation set that includes `_`.
+   https://developer.apple.com/help/app-store-connect-analytics/acquisition/campaign-links/ */
+var CT_MAX = 30;
+function packCt(channel, creative){
+  channel = channel.slice(0, CT_MAX);
+  if (!creative) return channel;
+  var room = CT_MAX - channel.length - 1;          // 1 for the separator
+  if (room < 1) return channel;                    // no space for a creative
+  if (creative.length <= room) return channel + '_' + creative;
+  var cut = creative.slice(0, room);
+  var sep = cut.lastIndexOf('_');
+  if (sep > 0) cut = cut.slice(0, sep);            // land on a word boundary
+  return channel + '_' + cut;
+}
+var ct = packCt(src, post);
+
+/* Every URL here carries its tracking, including the app-scheme one. That is
+   the whole point: `handoffUrl()` prefers a scheme over https on most taps, so
+   a scheme URL without the campaign attached is a tap whose attribution is
+   thrown away at the last hop — invisible, because the visitor still lands in
+   the right place. */
+var appleParams = (C.appleProviderToken ? 'pt=' + encodeURIComponent(C.appleProviderToken) + '&' : '') +
+  'ct=' + ct + '&mt=8';
+
+var STORE = {
+  ios: {
+    url: 'https://apps.apple.com/app/id' + C.appleId + '?' + appleParams,
+    schemeUrl: 'itms-apps://apps.apple.com/app/id' + C.appleId + '?' + appleParams
+  }
+};
+
+/* ══ render ═════════════════════════════════════════════════════════ */
+document.documentElement.lang = lang;
+
+function applyText(){
+  [].forEach.call(document.querySelectorAll('[data-t]'), function(el){
+    el.textContent = T[el.getAttribute('data-t')] || '';
+  });
+}
+applyText();
+
+var iconImg = '<img src="' + C.iconUrl + '" alt="Spent" width="220" height="220">';
+document.getElementById('icon-top').innerHTML = iconImg;
+document.getElementById('icon-foot').innerHTML = iconImg;
+
+/* language switcher */
+var LANG_LABEL = {en:'EN', ru:'РУ', uz:'UZ'};
+document.getElementById('langs').innerHTML = Object.keys(STR).map(function(l){
+  return '<button data-l="' + l + '"' + (l === lang ? ' class="on"' : '') + '>' + LANG_LABEL[l] + '</button>';
+}).join('');
+document.getElementById('langs').addEventListener('click', function(e){
+  var b = e.target.closest('button'); if (!b) return;
+  var l = b.getAttribute('data-l'); if (l === lang) return;
+  try { localStorage.setItem('spent_lang', l); } catch(err){}
+  q.set('lang', l);
+  location.replace(location.pathname + '?' + q.toString() + location.hash);
+});
+
+/* social icons */
+var SOC = {
+  instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg>',
+  telegram:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 3.4 2.9 10.6c-1 .4-1 1 .1 1.3l4.7 1.5 1.8 5.5c.2.6.6.7 1.1.3l2.6-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-13.9c.3-1.2-.5-1.8-1.7-1.4zM8.7 13.2l9-5.7c.4-.3.8-.1.5.2l-7.5 6.8-.3 3.2z"/></svg>',
+  email:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="4.6" width="18.8" height="14.8" rx="3.2"/><path d="m3.4 6.4 8.6 6.4 8.6-6.4"/></svg>'
+};
+function socialHTML(){
+  var out = '';
+  if (C.social.instagram) out += '<a href="' + C.social.instagram + '" rel="noopener" aria-label="Instagram">' + SOC.instagram + '</a>';
+  if (C.social.telegram)  out += '<a href="' + C.social.telegram  + '" rel="noopener" aria-label="Telegram">'  + SOC.telegram  + '</a>';
+  if (C.social.email)     out += '<a href="mailto:' + C.social.email + '" aria-label="Email">' + SOC.email + '</a>';
+  return out;
+}
+document.getElementById('soc-top').innerHTML = socialHTML();
+document.getElementById('soc-foot').innerHTML = socialHTML();
+
+/* ══ social proof ═══════════════════════════════════════════════════
+   Real App Store numbers only, and only once there are enough of them to help.
+   Below the thresholds both sections stay hidden and the page sells the
+   product instead — "5.0 from 1 rating" is a worse signal than silence. */
+var STAR = '<svg viewBox="0 0 12 12"><path d="M6 .6l1.7 3.45 3.8.55-2.75 2.68.65 3.79L6 9.28 2.6 11.07l.65-3.79L.5 4.6l3.8-.55z"/></svg>';
+function stars5(){ return STAR + STAR + STAR + STAR + STAR; }
+function renderReviews(){
+  var rEl = document.getElementById('ratings');
+  var showRating = C.rating && C.rating.count >= C.minRatings;
+  rEl.hidden = !showRating;
+  if (showRating){
+    rEl.innerHTML =
+      '<svg class="r-badge" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+      '<path d="M17.05 12.5c0-2 1.05-3.3 2.35-4.1a4.7 4.7 0 0 0-3.7-2c-1.55-.15-3.2.9-3.8.9-.65 0-2-.85-3.3-.85C6.05 6.5 4 8.4 4 12.2c0 1.15.2 2.35.6 3.6.55 1.65 2.5 5.7 4.55 5.6 1.05-.05 1.8-.75 3.15-.75 1.3 0 2 .75 3.15.75 2.05-.05 3.85-3.7 4.35-5.35-2.7-1.3-2.75-3.5-2.75-3.55zM14.6 5.1c1.15-1.4 1.05-2.65 1-3.1-1.05.05-2.25.7-2.95 1.5-.75.85-1.15 1.9-1.05 3.05 1.15.1 2.2-.5 3-1.45z"/></svg>' +
+      '<span class="r-col"><span class="r-score">' + C.rating.score + '<span>/5</span></span>' +
+      '<span class="rstars">' + stars5() + '</span>' +
+      '<a class="r-cap" href="' + STORE.ios.url + '" rel="noopener">' + C.rating.count + ' ' + T.ratingCap + '</a></span>';
+  }
+
+  var vEl = document.getElementById('reviews');
+  var list = T.reviews || [];
+  vEl.hidden = list.length < C.minReviews;
+  if (!vEl.hidden){
+    vEl.innerHTML = list.map(function(r){
+      return '<article class="review"><div class="head"><b>' + r.t + '</b>' +
+        '<span class="stars5">' + stars5() + '</span></div>' +
+        '<p>' + r.b + '</p>' +
+        '<span class="who">' + r.f + ' ' + r.n + '</span></article>';
+    }).join('');
+  }
+}
+
+/* ══ icons ══════════════════════════════════════════════════════════ */
+var ICON = {
+  camera:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 8.4A2.2 2.2 0 0 1 5.4 6.2h1.9l1.3-2.1h6.8l1.3 2.1h1.9a2.2 2.2 0 0 1 2.2 2.2v9a2.2 2.2 0 0 1-2.2 2.2H5.4a2.2 2.2 0 0 1-2.2-2.2z"/><circle cx="12" cy="12.6" r="3.7"/></svg>',
+  mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.6" width="6" height="11.2" rx="3"/><path d="M5.4 11.4a6.6 6.6 0 0 0 13.2 0"/><path d="M12 18v3.4"/></svg>',
+  keyboard:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.4" y="5.6" width="19.2" height="12.8" rx="2.8"/><path d="M6.4 9.4h.01M10 9.4h.01M13.6 9.4h.01M17.2 9.4h.01M6.4 12.8h.01M10 12.8h.01M13.6 12.8h.01M17.2 12.8h.01M8.4 15.8h7.2"/></svg>',
+  chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3.5"/></svg>',
+  target:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>',
+  globe:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.6"/><path d="M3.4 12h17.2"/><path d="M12 3.4c2.2 2.4 3.3 5.4 3.3 8.6s-1.1 6.2-3.3 8.6c-2.2-2.4-3.3-5.4-3.3-8.6S9.8 5.8 12 3.4z"/></svg>',
+  tag:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3.6 11.2V4.8a1.2 1.2 0 0 1 1.2-1.2h6.4c.3 0 .6.1.85.35l8 8a1.2 1.2 0 0 1 0 1.7l-6.4 6.4a1.2 1.2 0 0 1-1.7 0l-8-8a1.2 1.2 0 0 1-.35-.85z"/><circle cx="7.9" cy="7.9" r="1.4" fill="currentColor" stroke="none"/></svg>',
+  lists:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="3.2" width="7.4" height="7.4" rx="2.2"/><rect x="13.4" y="3.2" width="7.4" height="7.4" rx="2.2"/><rect x="3.2" y="13.4" width="7.4" height="7.4" rx="2.2"/><rect x="13.4" y="13.4" width="7.4" height="7.4" rx="2.2"/></svg>',
+  repeat:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.2a6.4 6.4 0 0 1 6.4-5.4h9"/><path d="m16.6 1.2 2.8 2.6-2.8 2.6"/><path d="M20 14.8a6.4 6.4 0 0 1-6.4 5.4h-9"/><path d="m7.4 22.8-2.8-2.6 2.8-2.6"/></svg>',
+  export:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3.5M8.5 7 12 3.5 15.5 7"/><path d="M4.5 13v5.7c0 1 .8 1.8 1.8 1.8h11.4c1 0 1.8-.8 1.8-1.8V13"/></svg>',
+  bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5a6 6 0 0 1 12 0c0 5 2 6.5 2 6.5H4s2-1.5 2-6.5z"/><path d="M10 19.5a2.2 2.2 0 0 0 4 0"/></svg>',
+  check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>'
+};
+
+/* ══ sections ═══════════════════════════════════════════════════════ */
+function renderWays(){
+  document.getElementById('ways').innerHTML = T.ways.map(function(w){
+    return '<div class="way"><span class="ic" aria-hidden="true">' + ICON[w.i] + '</span>' +
+      '<b>' + w.t + '</b><p>' + w.b + '</p>' +
+      (w.s ? '<span class="said">' + w.s + '</span>' : '') + '</div>';
+  }).join('');
+}
+function renderSteps(){
+  document.getElementById('steps').innerHTML = T.steps.map(function(s){
+    return '<div class="step"><b>' + s.t + '</b><p>' + s.b + '</p></div>';
+  }).join('');
+}
+function renderShowcase(){
+  document.getElementById('showcase').innerHTML = T.shows.map(function(s){
+    return '<figure class="show"><img src="' + s.img + '" width="560" height="1181" alt="" loading="lazy" decoding="async">' +
+      '<figcaption><b>' + s.t + '</b><p>' + s.b + '</p></figcaption></figure>';
+  }).join('');
+}
+function renderFeatures(){
+  document.getElementById('fgrid').innerHTML = T.features.map(function(f){
+    return '<div class="fcard">' + (ICON[f.i] || '') + '<b>' + f.t + '</b><p>' + f.b + '</p></div>';
+  }).join('');
+}
+function renderPrivacy(){
+  document.getElementById('priv-pills').innerHTML =
+    T.privPills.map(function(p){ return '<span>' + p + '</span>'; }).join('');
+}
+function renderPlans(){
+  document.getElementById('plans').innerHTML = T.plans.map(function(p){
+    return '<div class="plan"><b>' + p.t + '</b><p class="who">' + p.w + '</p><ul>' +
+      p.f.map(function(f){ return '<li>' + ICON.check + '<span>' + f + '</span></li>'; }).join('') +
+      '</ul><p class="note">' + T.planNote + '</p></div>';
+  }).join('');
+}
+function renderFaq(){
+  document.getElementById('faq').innerHTML = T.faq.map(function(f, i){
+    return '<details' + (i === 0 ? ' open' : '') + '><summary>' + f.q + '</summary><p>' + f.a + '</p></details>';
+  }).join('');
+}
+
+/* hero phone row — eager, not lazy. The row sits at the fold on a desktop
+   viewport, where lazy loading just buys a visible pop-in on the first paint;
+   the five webps together are lighter than a single stock hero photo. Only the
+   far-below-the-fold showcase shots defer. */
+var mid = Math.floor(C.screens.length / 2);
+document.getElementById('shots').innerHTML = C.screens.map(function(s, i){
+  return '<img src="' + s + '" width="560" height="1181" alt="" decoding="async"' +
+         (i === mid ? ' fetchpriority="high"' : '') + '>';
+}).join('');
+
+/* ══ store badge + smart tap ════════════════════════════════════════
+   The badge tries the itms-apps:// scheme (which hands straight to the App
+   Store app, including out of most in-app browsers) and falls back to the
+   plain https store link if nothing took over. */
+var APPLE_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
+  + '<path d="M17.05 12.5c0-2 1.05-3.3 2.35-4.1a4.7 4.7 0 0 0-3.7-2c-1.55-.15-3.2.9-3.8.9-.65 0-2-.85-3.3-.85C6.05 6.5 4 8.4 4 12.2c0 1.15.2 2.35.6 3.6.55 1.65 2.5 5.7 4.55 5.6 1.05-.05 1.8-.75 3.15-.75 1.3 0 2 .75 3.15.75 2.05-.05 3.85-3.7 4.35-5.35-2.7-1.3-2.75-3.5-2.75-3.55zM14.6 5.1c1.15-1.4 1.05-2.65 1-3.1-1.05.05-2.25.7-2.95 1.5-.75.85-1.15 1.9-1.05 3.05 1.15.1 2.2-.5 3-1.45z"/></svg>';
+
+/* Best hand-off for this environment.
+   Instagram exposes `instagram://extbrowser`, which asks Instagram itself to
+   reopen a URL in the real browser — the one reliable way out of its webview,
+   and far better than hoping a plain store link survives. Everywhere else the
+   plain app scheme is enough. Note that a plain https navigation is never
+   attempted from inside a webview: it would just load the store page trapped
+   in that same webview. */
+function handoffUrl(){
+  if (isInsta) return 'instagram://extbrowser?url=' + encodeURIComponent(STORE.ios.url);
+  return STORE.ios.schemeUrl;
+}
+function badgeHTML(){
+  return '<a class="badge" rel="noopener" href="' + STORE.ios.url + '">' + APPLE_SVG +
+    '<span class="lbl"><small>' + T.badgeApple + '</small><b>' + T.storeIos + '</b></span></a>';
+}
+function renderBadges(){
+  ['badges-hero','badges-bottom'].forEach(function(id){
+    document.getElementById(id).innerHTML = badgeHTML();
+  });
+  [].forEach.call(document.querySelectorAll('.badge'), function(el){
+    el.addEventListener('click', function(e){
+      if (inIAB){
+        var box = document.getElementById('iab');
+        box.classList.add('armed');
+        box.querySelector('.iab-body').textContent = T.iabBodyArmed;
+      }
+      if (!C.preferScheme) return;
+      var deep = handoffUrl();
+      if (!deep || deep === STORE.ios.url) return;
+      e.preventDefault();
+      var gone = false;
+      function mark(){ gone = true; }
+      document.addEventListener('visibilitychange', function(){ if (document.hidden) mark(); }, {once:true});
+      window.addEventListener('pagehide', mark, {once:true});
+      setTimeout(function(){ if (!gone) location.href = STORE.ios.url; }, 1600);
+      location.href = deep;
+    });
+  });
+}
+
+function renderAll(){
+  applyText();
+  renderReviews(); renderWays(); renderSteps(); renderShowcase();
+  renderFeatures(); renderPrivacy(); renderPlans(); renderFaq();
+  renderBadges(); renderFooter();
+}
+
+/* footer links + copy */
+function renderFooter(){
+  var fl = [];
+  if (C.links.privacy) fl.push('<a href="' + C.links.privacy + '">' + T.privacy + '</a>');
+  if (C.links.terms)   fl.push('<a href="' + C.links.terms + '">' + T.terms + '</a>');
+  if (C.social.email)  fl.push('<a href="mailto:' + C.social.email + '">' + C.social.email + '</a>');
+  document.getElementById('foot-links').innerHTML = fl.join('');
+  document.getElementById('copy').textContent = T.copy;
+}
+
+renderAll();
+
+if (inIAB) document.getElementById('iab').hidden = false;
+
+/* ══ scroll reveal ══════════════════════════════════════════════════
+   The app's polish is motion, not gloss, so sections lift in as they arrive.
+   Without IntersectionObserver everything is simply shown.
+
+   The reveal hides content behind opacity:0, so it MUST NOT be the only thing
+   standing between a visitor and the bottom CTA. A section parked in the
+   bottom rootMargin band of a viewport that cannot scroll any further never
+   intersects and would stay invisible for good — which is exactly where the
+   "Start tracking today" badge sits. Hence the belt-and-braces sweep: whatever
+   the observer has not revealed shortly after load gets shown outright. */
+(function(){
+  var els = [].slice.call(document.querySelectorAll('.reveal'));
+  function showAll(){ els.forEach(function(el){ el.classList.add('in'); }); }
+  if (!('IntersectionObserver' in window)){ showAll(); return; }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function(el){ io.observe(el); });
+
+  /* Reaching the end of the document means there is nothing left to scroll
+     into view, so anything still hidden never will be — show it. A blanket
+     timer would work too, but it would also fire while the visitor is still
+     near the top and rob every lower section of its entrance. */
+  function atEnd(){
+    return window.innerHeight + window.scrollY >=
+           document.documentElement.scrollHeight - 2;
+  }
+  function sweep(){ if (atEnd()) showAll(); }
+  window.addEventListener('scroll', sweep, { passive: true });
+  window.addEventListener('resize', sweep);
+  window.addEventListener('load', sweep);
+  sweep();
+})();
+
+/* ══ auto hand-off ══════════════════════════════════════════════════
+   iPhones arriving from a social link go to the store without waiting for a
+   tap. Three rules keep this from backfiring:
+
+   • Desktop never redirects — it would only show the store's web page.
+   • Android never redirects either: there is no Android app, so the App Store
+     would be a dead end. Those visitors just read the page.
+   • Inside an in-app browser we attempt ONLY the break-out scheme. A plain
+     https navigation would load the store page trapped in that same webview,
+     which is worse than staying here, so on failure the page and its
+     "Tap ••• → Open in browser" helper simply remain.
+
+   The attempt is silent and harmless: an unhandled scheme does nothing. */
+(function autoHandoff(){
+  if (!C.autoRedirect) return;
+  if (os !== 'ios') return;
+  if (param('noredirect') === '1') return;          // escape hatch for testing
+  var fromSocial = src !== 'direct';
+  if (!inIAB && !fromSocial) return;                // organic visitors read the page
+
+  setTimeout(function(){
+    var target = inIAB ? handoffUrl() : STORE.ios.url;
+    if (inIAB){
+      var box = document.getElementById('iab');
+      if (box){
+        box.classList.add('armed');
+        box.querySelector('.iab-body').textContent = T.iabBodyArmed;
+      }
+    }
+    location.href = target;
+  }, C.autoRedirectDelayMs || 700);
+})();
+
+/* ══ geo refinement ═════════════════════════════════════════════════
+   Runs ONLY when the browser said plain English and the visitor hasn't pinned
+   a language. Many phones in Uzbekistan are set to English while the user
+   would rather read Uzbek or Russian — that's the case this covers.
+
+   Deliberately not in the critical path: the page has already rendered from
+   navigator.language. This just re-labels the text if the country disagrees.
+   Same-origin, edge-served, and fails open on any error or timeout. */
+(function refineByGeo(){
+  if (pinned) return;                       // explicit choice wins, always
+  if (browserLang !== 'en') return;         // browser was specific — trust it
+  if (!window.fetch || !window.AbortController) return;
+
+  var cached = null;
+  try { cached = JSON.parse(localStorage.getItem('spent_geo') || 'null'); } catch(e){}
+  if (cached && cached.t && Date.now() - cached.t < 7 * 24 * 3600 * 1000) return apply(cached.c);
+
+  var ctl = new AbortController();
+  var timer = setTimeout(function(){ ctl.abort(); }, 1500);
+  fetch('/api/geo', { signal: ctl.signal })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      clearTimeout(timer);
+      if (!d || !d.country) return;
+      try { localStorage.setItem('spent_geo', JSON.stringify({ c: d.country, t: Date.now() })); } catch(e){}
+      apply(d.country);
+    })
+    .catch(function(){ clearTimeout(timer); });   // fail open — keep English
+
+  function apply(country){
+    var want = C.geo.uz.indexOf(country) !== -1 ? 'uz'
+             : C.geo.ru.indexOf(country) !== -1 ? 'ru' : 'en';
+    if (want === lang || !STR[want]) return;
+    lang = want; T = STR[want];
+    document.documentElement.lang = want;
+    renderAll();
+    var on = document.querySelector('.langs button.on');
+    if (on) on.classList.remove('on');
+    var next = document.querySelector('.langs button[data-l="' + want + '"]');
+    if (next) next.classList.add('on');
+  }
+})();
+
+/* ══ analytics ══════════════════════════════════════════════════════
+   Cloudflare Web Analytics: cookieless, no consent banner needed, gives
+   country + referrer breakdowns. Loaded last and async so it can never block
+   or break the page — the site works fine with it blocked, or with no token
+   configured at all. */
+(function(){
+  if (!CONFIG.cfBeaconToken) return;
+  var s = document.createElement('script');
+  s.type = 'module'; s.defer = true;
+  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  s.setAttribute('data-cf-beacon', JSON.stringify({ token: CONFIG.cfBeaconToken }));
+  document.body.appendChild(s);
+})();
+
+/* Preview hook: __preview('iab'|'web', 'ru', 'ios') */
+window.__preview = function(s, l, o){
+  location.replace(location.pathname + '?state=' + (s || (inIAB ? 'iab' : 'web')) +
+                   '&lang=' + (l || lang) + '&os=' + (o || os) + '&noredirect=1');
+};
+</script>
+</body>
+</html>

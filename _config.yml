@@ -2,19 +2,24 @@
 page_title                                : Spent — AI Expense Tracker for iPhone · Snap, Say, or Type   # Populates <title> and is the SEO title. Must be set (blank = empty <title>).
 
 # App Info
-ios_app_id                                :                                           # Spent is not on the App Store yet (bundle id com.summerapps.spent). Add the numeric App Store ID once live to auto-fill icon, price and link.
-ios_app_country                           : us                                        # 2-letter country code. First market is Uzbekistan (uz) — switch once the listing is live there.
+#
+# NOTE: the landing page itself (index.html) is hand-built and self-contained —
+# it does NOT read this file. These values drive the Jekyll-rendered sub-pages
+# (/privacypolicy/, /terms/, /changelog/) and their smart app banner. Store
+# links and campaign tracking on the landing page live in its own CONFIG block.
+ios_app_id                                : 6790070790                                # "Spent: AI Expense Tracker" — live since 2026-07-24.
+ios_app_country                           : us                                        # 2-letter code for the theme's iTunes lookups only. The links below are country-neutral, so Apple redirects each visitor to their own storefront.
 
-appstore_link                             :                                           # Placeholder until published. Enter the App Store URL once live.
+appstore_link                             : https://apps.apple.com/app/id6790070790   # Country-neutral on purpose. Tracked campaign links (pt/ct) are built in index.html — see docs/marketing-links.md.
 playstore_link                            :                                           # iOS only — no Android app. Leave empty on purpose.
 presskit_download_link                    :                                           # Optional link to a downloadable press kit (.zip).
 
-app_icon                                  : assets/appicon.png                        # PLACEHOLDER — replace with Spent's red-accent icon (also used as the favicon + smart-banner art).
+app_icon                                  : assets/appicon.png                        # The shipping Spent icon, exported from the app's asset catalogue.
 app_name                                  : Spent
 app_price                                 : Free · 7-day trial
 app_description                           : Log a spend in 3 seconds — snap a receipt, say it, or type it. Spent's AI fills in the merchant, amount, date and category. Private, local-first tracking with budgets, insights and multi-currency.
 
-enable_smart_app_banner                   : false                                     # Re-enable once ios_app_id is set — the banner needs a live App Store ID.
+enable_smart_app_banner                   : true                                      # ios_app_id is set, so the banner works.
 
 
 
@@ -123,9 +128,12 @@ sass:
 # Exclude these files from your production _site
 exclude:
   - LICENSE
+  - functions        # Cloudflare Pages Functions — must stay out of _site
+  - docs
   - README.md
   - CNAME
   - LANDING_CONTEXT.md
+  - LANDING_TASK.md
 
 collections:
   pages:

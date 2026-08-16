@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F7F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0E10" media="(prefers-color-scheme: dark)">
+<title>Not found — Spent</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap">
+<style>
+  :root{
+    color-scheme:light dark;
+    --bg:#F7F7F5; --txt:#1C1C1E; --mut:#6B6B70; --accent:#E8434B;
+    --font:"Poppins",-apple-system,"SF Pro Rounded","SF Pro Display",BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#0E0E10; --txt:#F5F5F4; --mut:#9A9AA0; --accent:#FF5A61}
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);min-height:100vh;display:grid;place-items:center;
+    padding:24px;text-align:center;font-family:var(--font);-webkit-font-smoothing:antialiased}
+  h1{font:800 clamp(28px,6vw,44px)/1.15 inherit;letter-spacing:-.035em}
+  h1 mark{background:none;color:var(--accent)}
+  p{margin-top:12px;color:var(--mut);font:400 15px/1.5 inherit}
+  a{display:inline-flex;align-items:center;height:52px;padding:0 24px;margin-top:26px;
+    background:var(--txt);color:var(--bg);border-radius:99px;text-decoration:none;
+    font:700 16px/1 inherit;letter-spacing:-.01em}
+</style>
+</head>
+<body>
+  <main>
+    <h1>Nothing here<mark>.</mark></h1>
+    <p>That link doesn’t exist — but the app does.</p>
+    <a href="/">Go to Spent</a>
+  </main>
+</body>
+</html>
