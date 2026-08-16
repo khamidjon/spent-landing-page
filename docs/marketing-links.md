@@ -172,10 +172,17 @@ in `index.html`. **Never invent a rating or a review.**
 | Thing | Location |
 |---|---|
 | Site source | `khamidjon/spent-landing-page`, `master`, root `index.html` |
-| Hosting | Cloudflare Pages (auto-builds Jekyll on push) |
-| Build | `bundle exec jekyll build` → `_site` |
+| Hosting | Cloudflare Pages project **`spent`** (auto-builds Jekyll on push) |
+| Build | `bundle exec jekyll build` → `_site`, no environment variables |
 | Deploy | Commit + push to `master` |
-| DNS | Namecheap → `spent.summerapps.com` |
+| Fallback URL | `https://spent-34m.pages.dev` (always live, even before DNS) |
+| Custom domain | `spent.summerapps.com` |
+| DNS | Namecheap — CNAME `spent` → `spent-34m.pages.dev` |
 | Analytics | Cloudflare dashboard → Analytics → Web Analytics (token still unset — see `cfBeaconToken` in `index.html`) |
 | Install attribution | App Store Connect → Analytics → Acquisition |
 | Edge geo | `functions/api/geo.js` (Cloudflare Pages Function, excluded from `_site`) |
+
+`summerapps.com` stays on Namecheap's nameservers — the Pages custom domain is
+wired with a CNAME, exactly like `calfit.summerapps.com`. Do **not** accept
+Cloudflare's offer to transfer the zone: that would move DNS for every
+`summerapps.com` subdomain, CalFit included.
