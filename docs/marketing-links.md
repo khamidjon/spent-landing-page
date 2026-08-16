@@ -171,10 +171,10 @@ in `index.html`. **Never invent a rating or a review.**
 
 | Thing | Location |
 |---|---|
-| Site source | `khamidjon/spent-landing-page`, `main`, root `index.html` |
+| Site source | `khamidjon/spent-landing-page`, `master`, root `index.html` |
 | Hosting | Cloudflare Pages (auto-builds Jekyll on push) |
 | Build | `bundle exec jekyll build` → `_site` |
-| Deploy | Commit + push to `main` |
+| Deploy | Commit + push to `master` |
 | DNS | Namecheap → `spent.summerapps.com` |
 | Analytics | Cloudflare dashboard → Analytics → Web Analytics (token still unset — see `cfBeaconToken` in `index.html`) |
 | Install attribution | App Store Connect → Analytics → Acquisition |
