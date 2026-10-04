@@ -5,7 +5,7 @@ include_in_header: false
 ---
 
 **Last updated**  
-July 17 2026
+October 5 2026
 
 # Privacy Policy
 Thank you for using Spent! Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our app.
@@ -37,6 +37,8 @@ Your data is stored locally on your device first, and is synced to your own priv
 
 ## 3. Third-Party Services
 Spent may use trusted third-party tools for analytics or crash reporting, and AI services to read receipt photos and parse voice input into transactions. These services may process the image or audio you submit, and may collect limited technical data such as device type or operating system version. Your transaction data is never shared with other users.
+
+Advertising measurement: to learn which of our ads bring people to Spent, the app uses the Meta (Facebook) SDK and Apple's AdServices framework (through our subscription provider, RevenueCat). They receive a small set of app events, such as opening the app, logging a first expense, and starting a trial or subscription (with its price), together with limited technical data such as device model and operating system version. They never receive your transactions, receipt photos, or voice recordings. Spent does not ask for or use Apple's advertising identifier (IDFA). Meta processes this data under its own [privacy policy](https://www.facebook.com/privacy/policy/).
 
 We may update this section if new services are added in future versions.
 
