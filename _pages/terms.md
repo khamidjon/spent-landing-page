@@ -10,7 +10,7 @@ include_in_header: false
 October 20 2026
 
 # Terms of Use
-These Terms of Use ("Terms") govern your use of the Spent app ("App"), developed by **Thunder LLC (Summer Apps)**. In the Republic of Uzbekistan, the App and payments for Spent Pro made with bank cards are provided by **"ELEVEN THREE" LLC** (the "Operator"), whose details are listed in [Section 13](#operator-details){:target="_self"}. By accessing or using the App, you agree to be bound by these Terms.
+These Terms of Use ("Terms") govern your use of the Spent app ("App"), developed by **Khamidjon Egamov**. In the Republic of Uzbekistan, the App and payments for Spent Pro made with bank cards are provided by **"ELEVEN THREE" LLC** (the "Operator"), whose details are listed in [Section 13](#operator-details){:target="_self"}. By accessing or using the App, you agree to be bound by these Terms.
 
 <br>
 ## 1. Acceptance of Terms
@@ -26,7 +26,7 @@ Spent is provided for personal and household use. You may not use the App for an
 
 <br>
 ## 3. Intellectual Property
-All content and features within the App, including but not limited to logos, graphics, text, and software, are the property of Thunder LLC (Summer Apps) or its licensors. You may not use, reproduce, modify, or distribute any content from the App without explicit permission.
+All content and features within the App, including but not limited to logos, graphics, text, and software, are the property of Khamidjon Egamov or the App’s licensors. You may not use, reproduce, modify, or distribute any content from the App without explicit permission.
 
 <br>
 ## 4. Account Creation and Security
@@ -42,7 +42,7 @@ Spent is provided “as is” and without any warranty of any kind. We make no r
 
 Spent uses AI to read receipt photos and voice input and fill in transaction details. These results may contain mistakes, so please check them before saving. Spent is a personal record-keeping tool and does not provide financial, tax, or investment advice.
 
-In no event shall Thunder LLC (Summer Apps) be liable for any indirect, incidental, or consequential damages arising out of your use of the App.
+In no event shall Khamidjon Egamov be liable for any indirect, incidental, or consequential damages arising out of your use of the App.
 
 <br>
 ## 7. Termination

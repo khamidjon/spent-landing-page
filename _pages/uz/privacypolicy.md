@@ -11,7 +11,7 @@ include_in_header: false
 2026-yil 20-oktabr
 
 # Maxfiylik siyosati
-Spent ilovasi **Thunder LLC (Summer Apps)** tomonidan ishlab chiqilgan. O‘zbekiston Respublikasida Spent xizmati va Spent Pro uchun bank kartalari orqali to‘lovlarni **«ELEVEN THREE» MChJ** (keyingi o‘rinlarda — «Operator») taqdim etadi, uning rekvizitlari [9-bo‘limda](#operator-details){:target="_self"} keltirilgan. Spent’dan foydalanayotganingiz uchun rahmat! Biz maxfiyligingizni qadrlaymiz. Ushbu Maxfiylik siyosati ilovadan foydalanganingizda ma’lumotlaringizni qanday to‘plashimiz, ishlatishimiz va himoya qilishimizni tushuntiradi.
+Spent ilovasi **Khamidjon Egamov** tomonidan ishlab chiqilgan. O‘zbekiston Respublikasida Spent xizmati va Spent Pro uchun bank kartalari orqali to‘lovlarni **«ELEVEN THREE» MChJ** (keyingi o‘rinlarda — «Operator») taqdim etadi, uning rekvizitlari [9-bo‘limda](#operator-details){:target="_self"} keltirilgan. Spent’dan foydalanayotganingiz uchun rahmat! Biz maxfiyligingizni qadrlaymiz. Ushbu Maxfiylik siyosati ilovadan foydalanganingizda ma’lumotlaringizni qanday to‘plashimiz, ishlatishimiz va himoya qilishimizni tushuntiradi.
 
 <br>
 
