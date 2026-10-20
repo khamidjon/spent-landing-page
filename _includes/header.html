@@ -9,7 +9,7 @@
 				</defs>
 			</svg>
 			{% if page.url != '/' %}
-				<a href="../" target="_self"><img class="headerIcon" src="{{ site.app_icon | relative_url }}"></a>
+				<a href="{{ '/' | relative_url }}{% if page.lang %}?lang={{ page.lang }}{% endif %}" target="_self"><img class="headerIcon" src="{{ site.app_icon | relative_url }}"></a>
 			{% else %}
 				<img class="headerIcon" src="{{ site.app_icon | relative_url }}">
 			{% endif %}

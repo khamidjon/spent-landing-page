@@ -1,0 +1,34 @@
+# Merchant details required by the card acquirers (Rahmat, Payme).
+# Rendered by _includes/operator_details.html at the end of the privacy policy
+# and terms pages, in every language. Change them here only.
+email: admin@summerapps.com
+
+en:
+  email_label: Email
+  rows:
+    - ["Organization name", "\"ELEVEN THREE\" LLC"]
+    - ["Legal address", "9 Kattasov 2nd Dead-end Street, Khasanboy MFY, Yunusobod District, Tashkent, Republic of Uzbekistan"]
+    - ["TIN", "312 975 473"]
+    - ["Bank", "UzSanoatqurilish Bank, City Branch"]
+    - ["MFO", "00440"]
+    - ["Account number", "2020 8000 8074 5061 1001"]
+
+ru:
+  email_label: Электронная почта
+  rows:
+    - ["Наименование организации", "ООО «ELEVEN THREE»"]
+    - ["Юридический адрес", "Республика Узбекистан, г. Ташкент, Юнусабадский район, МСГ Хасанбой, 2-й тупик Каттасов, д. 9"]
+    - ["ИНН", "312 975 473"]
+    - ["Банк", "UzSanoatqurilish Bank, Городской филиал"]
+    - ["МФО", "00440"]
+    - ["Расчётный счёт", "2020 8000 8074 5061 1001"]
+
+uz:
+  email_label: Elektron pochta
+  rows:
+    - ["Tashkilot nomi", "«ELEVEN THREE» MChJ"]
+    - ["Yuridik manzil", "O‘zbekiston Respublikasi, Toshkent shahri, Yunusobod tumani, Hasanboy MFY, Kattasov 2-berk ko‘chasi, 9-uy"]
+    - ["STIR", "312 975 473"]
+    - ["Bank", "UzSanoatqurilish Bank, Shahar filiali"]
+    - ["MFO", "00440"]
+    - ["Hisob raqami", "2020 8000 8074 5061 1001"]

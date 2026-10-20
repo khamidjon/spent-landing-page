@@ -1,0 +1,24 @@
+{%- comment -%} Values live in _data/operator.yml, one block per language. {%- endcomment -%}
+{%- assign l = page.lang | default: 'en' -%}
+{%- assign o = site.data.operator[l] -%}
+<style>
+  .markdown-body .opDetails { display: table; width: 100%; table-layout: fixed; }
+  .markdown-body .opDetails td:first-child { width: 36%; }
+  .markdown-body .opDetails td:last-child { overflow-wrap: anywhere; }
+  /* Phones: label above value, so long Russian labels never break mid-word. */
+  @media (max-width: 480px) {
+    .markdown-body .opDetails,
+    .markdown-body .opDetails tbody,
+    .markdown-body .opDetails tr,
+    .markdown-body .opDetails td { display: block; width: auto; }
+    .markdown-body .opDetails td:first-child { width: auto; border-bottom: 0; padding-bottom: 0; }
+    .markdown-body .opDetails td:last-child { border-top: 0; }
+    .markdown-body .opDetails tr + tr td:first-child { border-top: 0; }
+  }
+</style>
+<table class="opDetails">
+  {%- for row in o.rows %}
+  <tr><td><strong>{{ row[0] }}</strong></td><td>{{ row[1] }}</td></tr>
+  {%- endfor %}
+  <tr><td><strong>{{ o.email_label }}</strong></td><td><a href="mailto:{{ site.data.operator.email }}">{{ site.data.operator.email }}</a></td></tr>
+</table>

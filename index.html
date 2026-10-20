@@ -1093,8 +1093,9 @@ function renderAll(){
 /* footer links + copy */
 function renderFooter(){
   var fl = [];
-  if (C.links.privacy) fl.push('<a href="' + C.links.privacy + '">' + T.privacy + '</a>');
-  if (C.links.terms)   fl.push('<a href="' + C.links.terms + '">' + T.terms + '</a>');
+  var pre = lang === 'en' ? '' : '/' + lang;   // /ru/privacypolicy/, /uz/terms/
+  if (C.links.privacy) fl.push('<a href="' + pre + C.links.privacy + '">' + T.privacy + '</a>');
+  if (C.links.terms)   fl.push('<a href="' + pre + C.links.terms + '">' + T.terms + '</a>');
   if (C.social.email)  fl.push('<a href="mailto:' + C.social.email + '">' + C.social.email + '</a>');
   document.getElementById('foot-links').innerHTML = fl.join('');
   document.getElementById('copy').textContent = T.copy;

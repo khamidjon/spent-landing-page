@@ -1,0 +1,10 @@
+{%- comment -%} Language switcher for the legal pages. include.doc = privacypolicy | terms {%- endcomment -%}
+{%- assign cur = page.lang | default: 'en' -%}
+{%- assign en_url = '/' | append: include.doc | append: '/' | relative_url -%}
+{%- assign ru_url = '/ru/' | append: include.doc | append: '/' | relative_url -%}
+{%- assign uz_url = '/uz/' | append: include.doc | append: '/' | relative_url -%}
+<p>
+  {% if cur == 'en' %}<strong>English</strong>{% else %}<a href="{{ en_url }}" target="_self">English</a>{% endif %} ·
+  {% if cur == 'ru' %}<strong>Русский</strong>{% else %}<a href="{{ ru_url }}" target="_self">Русский</a>{% endif %} ·
+  {% if cur == 'uz' %}<strong>O‘zbekcha</strong>{% else %}<a href="{{ uz_url }}" target="_self">O‘zbekcha</a>{% endif %}
+</p>
