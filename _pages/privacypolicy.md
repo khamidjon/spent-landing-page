@@ -7,10 +7,10 @@ include_in_header: false
 {% include legal_langs.html doc='privacypolicy' %}
 
 **Last updated**
-October 20 2026
+November 3 2026
 
 # Privacy Policy
-Spent is developed by **Khamidjon Egamov**. In the Republic of Uzbekistan, the Spent service and payments for Spent Pro made with bank cards are provided by **"ELEVEN THREE" LLC** (the "Operator"), whose details are listed in [Section 9](#operator-details){:target="_self"}. Thank you for using Spent! Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our app.
+Spent is developed by **Khamidjon Egamov**. In the Republic of Uzbekistan, the Spent service and payments for Spent Pro made with bank cards are provided by **"ELEVEN THREE" LLC** (the "Operator"), whose details are listed in [Section 9](#operator-details){:target="_self"}. On Google Play, Spent is published by **Thunder LLC**. Thank you for using Spent! Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our app.
 
 <br>
 
@@ -41,7 +41,7 @@ Your data is stored locally on your device first, and is synced to your own priv
 ## 3. Third-Party Services
 Spent may use trusted third-party tools for analytics or crash reporting, and AI services to read receipt photos and parse voice input into transactions. These services may process the image or audio you submit, and may collect limited technical data such as device type or operating system version. Your transaction data is never shared with other users.
 
-Advertising measurement: to learn which of our ads bring people to Spent, the app uses the Meta (Facebook) SDK and Apple's AdServices framework (through our subscription provider, RevenueCat). They receive a small set of app events, such as opening the app, logging a first expense, and starting a trial or subscription (with its price), together with limited technical data such as device model and operating system version. They never receive your transactions, receipt photos, or voice recordings. Spent does not ask for or use Apple's advertising identifier (IDFA). Meta processes this data under its own [privacy policy](https://www.facebook.com/privacy/policy/).
+Advertising measurement: to learn which of our ads bring people to Spent, the app uses the Meta (Facebook) SDK and Apple's AdServices framework (through our subscription provider, RevenueCat). They receive a small set of app events, such as opening the app, logging a first expense, and starting a trial or subscription (with its price), together with limited technical data such as device model and operating system version. They never receive your transactions, receipt photos, or voice recordings. Spent does not ask for or use Apple's advertising identifier (IDFA). On Android, the Meta SDK may also receive your device's advertising ID, which you can reset or delete at any time in your phone's settings (Google ▸ Ads). Meta processes this data under its own [privacy policy](https://www.facebook.com/privacy/policy/).
 
 Bank card payments in Uzbekistan are processed by Rahmat and Payme, as described in [Section 6](#payments){:target="_self"}.
 
@@ -60,8 +60,8 @@ You are responsible for protecting your device and any backups you make.
 You have full control over your data. You can:
 
 - View or edit your transactions at any time.
-- Export your data to CSV or PDF.
-- Delete your data at any time.
+- Export your data to CSV or PDF (on iPhone).
+- Delete your data at any time: in the Android app, Settings ▸ Account ▸ Delete account removes your account, your synced transactions and your receipt photos from our servers. On any device, you can also ask us to delete it by email (see [Section 8](#contact){:target="_self"}).
 - Uninstall the app to remove all local data.
 
 <br>
@@ -69,12 +69,13 @@ You have full control over your data. You can:
 ## 6. Subscription & Payment Information {#payments}
 Spent offers Spent Pro through subscription plans. Payments are processed through:
 
-- **Apple's In-App Purchase** system.
+- **Apple's In-App Purchase** system on iPhone.
+- **Google Play Billing** on Android.
 - **Rahmat** (operated by JSC "Multicard Payment") and **Payme** for bank card payments in the Republic of Uzbekistan.
 
 Card details are entered only on the payment provider's secure payment page and are processed by that provider under its own security standards. We do not store or have access to your credit card or payment details. We collect minimal data related to your subscription status to enable Spent Pro and provide support (e.g., plan, expiration date).
 
-For more about Apple's data policy, please see [https://www.apple.com/legal/privacy/](https://www.apple.com/legal/privacy/).
+For more about Apple's data policy, please see [https://www.apple.com/legal/privacy/](https://www.apple.com/legal/privacy/), and for Google's, [https://policies.google.com/privacy](https://policies.google.com/privacy).
 
 <br>
 
@@ -83,7 +84,7 @@ We may update this Privacy Policy from time to time. We’ll notify you of any m
 
 <br>
 
-## 8. Contact Us
+## 8. Contact Us {#contact}
 If you have any questions about this Privacy Policy, feel free to contact us at:
 
 Email: [admin@summerapps.com](mailto:admin@summerapps.com)
