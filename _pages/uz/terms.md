@@ -8,10 +8,10 @@ include_in_header: false
 {% include legal_langs.html doc='terms' %}
 
 **Oxirgi yangilanish**
-2026-yil 20-oktabr
+2026-yil 6-noyabr
 
 # Foydalanish shartlari
-Ushbu Foydalanish shartlari («Shartlar») **Khamidjon Egamov** tomonidan ishlab chiqilgan Spent ilovasidan («Ilova») foydalanish tartibini belgilaydi. O‘zbekiston Respublikasida Ilova va Spent Pro uchun bank kartalari orqali to‘lovlarni **«ELEVEN THREE» MChJ** («Operator») taqdim etadi, uning rekvizitlari [13-bo‘limda](#operator-details){:target="_self"} keltirilgan. Ilovaga kirish yoki undan foydalanish orqali siz ushbu Shartlarga rioya qilishga rozilik bildirasiz.
+Ushbu Foydalanish shartlari («Shartlar») **Khamidjon Egamov** tomonidan ishlab chiqilgan Spent ilovasidan («Ilova») foydalanish tartibini belgilaydi. O‘zbekiston Respublikasida Ilova va Spent Pro uchun bank kartalari orqali to‘lovlarni **«ELEVEN THREE» MChJ** («Operator») taqdim etadi, uning rekvizitlari [13-bo‘limda](#operator-details){:target="_self"} keltirilgan. Google Play’da Spent ilovasini **Thunder LLC** nashr etadi. Ilovaga kirish yoki undan foydalanish orqali siz ushbu Shartlarga rioya qilishga rozilik bildirasiz.
 
 <br>
 ## 1. Shartlarni qabul qilish
@@ -57,12 +57,14 @@ Ushbu Shartlarni istalgan vaqtda o‘zgartirish huquqini o‘zimizda saqlab qola
 ## 9. Obunalar
 Spent Ilovadagi Spent Pro funksiyalarini ochadigan oylik va yillik tariflarni taklif qiladi.
 
-**App Store orqali xaridlar**
-- To‘lov xarid tasdiqlanganda Apple ID hisobingizdan yechiladi.
+**App Store yoki Google Play orqali xaridlar**
+- To‘lov xarid tasdiqlanganda Apple ID yoki Google Play hisobingizdan yechiladi.
 - Obuna joriy to‘lov davri tugashidan kamida 24 soat oldin bekor qilinmasa, avtomatik ravishda yangilanadi.
-- Obunani istalgan vaqtda Apple ID sozlamalarida boshqarishingiz va bekor qilishingiz mumkin.
+- Obunani istalgan vaqtda Apple ID sozlamalarida yoki Google Play obunalar bo‘limida boshqarishingiz va bekor qilishingiz mumkin.
 - Agar bepul sinov muddati taklif qilingan bo‘lsa, obuna sotib olganingizda uning foydalanilmagan qismi bekor bo‘ladi.
-- Pulni qaytarish uchun Apple’ga murojaat qiling: https://support.apple.com/en-us/HT204084
+- Pulni qaytarish uchun tegishli platformaga murojaat qiling:
+  - Apple: https://support.apple.com/en-us/HT204084
+  - Google Play: https://support.google.com/googleplay/answer/2479637
 
 **O‘zbekiston Respublikasida bank kartalari orqali to‘lovlar**
 - Rahmat yoki Payme orqali bank kartasi bilan qilingan to‘lovlarni Operator qabul qiladi. Narxlar to‘lovdan oldin o‘zbek so‘mida (UZS) ko‘rsatiladi.

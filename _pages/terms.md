@@ -7,10 +7,10 @@ include_in_header: false
 {% include legal_langs.html doc='terms' %}
 
 **Last updated**
-October 20 2026
+November 6 2026
 
 # Terms of Use
-These Terms of Use ("Terms") govern your use of the Spent app ("App"), developed by **Khamidjon Egamov**. In the Republic of Uzbekistan, the App and payments for Spent Pro made with bank cards are provided by **"ELEVEN THREE" LLC** (the "Operator"), whose details are listed in [Section 13](#operator-details){:target="_self"}. By accessing or using the App, you agree to be bound by these Terms.
+These Terms of Use ("Terms") govern your use of the Spent app ("App"), developed by **Khamidjon Egamov**. In the Republic of Uzbekistan, the App and payments for Spent Pro made with bank cards are provided by **"ELEVEN THREE" LLC** (the "Operator"), whose details are listed in [Section 13](#operator-details){:target="_self"}. On Google Play, Spent is published by **Thunder LLC**. By accessing or using the App, you agree to be bound by these Terms.
 
 <br>
 ## 1. Acceptance of Terms
@@ -56,12 +56,14 @@ We reserve the right to modify these Terms at any time. When we do, the updated 
 ## 9. Subscriptions
 Spent offers monthly and yearly plans that unlock Spent Pro features within the app.
 
-**Purchases through the App Store**
-- Payment will be charged to your Apple ID at the confirmation of purchase.
+**Purchases through the App Store or Google Play**
+- Payment will be charged to your Apple ID or Google Play account at the confirmation of purchase.
 - Subscriptions renew automatically unless canceled at least 24 hours before the end of the current billing period.
-- You can manage or cancel your subscription at any time through your Apple ID Account Settings.
+- You can manage or cancel your subscription at any time through your Apple ID Account Settings or Google Play subscriptions.
 - If a free trial is offered, any unused portion will be forfeited once you purchase a subscription.
-- For refunds, contact Apple: https://support.apple.com/en-us/HT204084
+- For refunds, contact the respective platform:
+  - Apple: https://support.apple.com/en-us/HT204084
+  - Google Play: https://support.google.com/googleplay/answer/2479637
 
 **Bank card payments in the Republic of Uzbekistan**
 - Payments made with a bank card through Rahmat or Payme are accepted by the Operator. Prices are shown in Uzbek soums (UZS) before payment.
