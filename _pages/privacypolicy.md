@@ -61,7 +61,7 @@ You have full control over your data. You can:
 
 - View or edit your transactions at any time.
 - Export your data to CSV or PDF (on iPhone).
-- Delete your data at any time: in the Android app, Settings ▸ Account ▸ Delete account removes your account, your synced transactions and your receipt photos from our servers. On any device, you can also ask us to delete it by email (see [Section 8](#contact){:target="_self"}).
+- Delete your data at any time: ask us by email and we delete your account, your synced transactions and your receipt photos from our servers (see [Section 8](#contact){:target="_self"}).
 - Uninstall the app to remove all local data.
 
 <br>

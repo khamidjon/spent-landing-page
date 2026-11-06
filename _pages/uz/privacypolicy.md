@@ -62,7 +62,7 @@ Ma’lumotlaringiz to‘liq sizning nazoratingizda. Siz:
 
 - tranzaksiyalaringizni istalgan vaqtda ko‘rishingiz va tahrirlashingiz;
 - ma’lumotlaringizni CSV yoki PDF ko‘rinishida eksport qilishingiz (iPhone’da);
-- ma’lumotlaringizni istalgan vaqtda o‘chirishingiz: Android ilovasidagi «Sozlamalar ▸ Hisob ▸ Hisobni o‘chirish» bandi hisobingiz, sinxronlangan tranzaksiyalaringiz va chek rasmlaringizni serverlarimizdan o‘chiradi. Istalgan qurilmada ma’lumotlarni o‘chirishni elektron pochta orqali ham so‘rashingiz mumkin ([8-bo‘limga](#contact){:target="_self"} qarang);
+- ma’lumotlaringizni istalgan vaqtda o‘chirishingiz: bizga elektron pochta orqali yozing — hisobingiz, sinxronlangan tranzaksiyalaringiz va chek rasmlaringizni serverlarimizdan o‘chiramiz ([8-bo‘limga](#contact){:target="_self"} qarang);
 - ilovani o‘chirib, qurilmadagi barcha ma’lumotlarni yo‘q qilishingiz mumkin.
 
 <br>
