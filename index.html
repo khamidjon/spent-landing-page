@@ -39,6 +39,7 @@
 <script>
 window.CONFIG = {
   appleId: '6790070790',            // Spent: AI Expense Tracker
+  androidPkg: 'com.summerapps.spent',
 
   // Apple provider token. Apple's campaign-link docs say: "Ensure your campaign
   // includes both a provider token and a campaign token" — a ct= with no pt= is
@@ -54,8 +55,8 @@ window.CONFIG = {
   appleProviderToken: '127760129',
 
   // Traffic source. `?src=` (or the referrer) sets it; it becomes `ct=` for
-  // App Store Connect → Analytics, so the console breaks installs down by
-  // source on its own.
+  // App Store Connect → Analytics and `utm_source=` for Play Console, so both
+  // consoles break installs down by source on their own.
   //
   // Any lowercase a–z / 0–9 / underscore name up to 24 chars is accepted, so a
   // new campaign link needs no code change — invent `?src=ramadan_promo` and it
@@ -69,14 +70,14 @@ window.CONFIG = {
     ru: ['RU','KZ','KG','TJ','TM','BY','AM','AZ','MD','GE']
   },
 
-  // true = tap tries the itms-apps:// scheme first, then falls back to the
-  // https store link after ~1.6s. false = tap goes straight to https.
+  // true = tap tries the app scheme (itms-apps:// / market://, or intent:// in
+  // an Android in-app browser) first, then falls back to the https store link
+  // after ~1.6s. false = tap goes straight to https.
   preferScheme: true,
 
-  // Send iPhones arriving from a social link straight to the store, without
-  // waiting for a tap. Desktop is never redirected (it would just show the
-  // store's web page), and neither is Android — there is no Android app, so
-  // handing an Android visitor to the App Store would be a dead end.
+  // Send iPhones and Android phones arriving from a social link straight to
+  // their own store, without waiting for a tap. Desktop is never redirected
+  // (it would just show the store's web page).
   autoRedirect: true,
   autoRedirectDelayMs: 700,
 
@@ -120,7 +121,8 @@ window.CONFIG = {
   // The beacon only reports on the hostname registered above, so previews on
   // *.pages.dev and localhost are silently ignored rather than polluting the
   // numbers. Note there is no query-string dimension — every ?src= link lands
-  // in the same "/" row; per-creative figures come from App Store Connect.
+  // in the same "/" row; per-creative figures come from App Store Connect and
+  // Play Console.
   cfBeaconToken: '87aaf893d95241bb9e3d1152340917c4'
 };
 </script>
@@ -211,7 +213,7 @@ h1 .h1-end{white-space:nowrap}
 .sub{margin:clamp(14px,2.4vh,24px) auto 0; max-width:48ch; color:var(--mut);
   font:400 clamp(14px,1.6vw,18px)/1.55 var(--font)}
 
-/* ── store badge ────────────────────────────────────────────────── */
+/* ── store badges ───────────────────────────────────────────────── */
 .badges{display:flex; justify-content:center; flex-wrap:wrap;
   gap:12px; margin-top:clamp(18px,3vh,30px)}
 .badge{display:flex; align-items:center; gap:11px;
@@ -399,7 +401,7 @@ h1 .h1-end{white-space:nowrap}
 .foot .copy{margin-top:16px; font:400 11.5px/1.5 var(--font); color:var(--dim)}
 
 /* ── short viewports (Instagram's in-app browser is ~560pt tall) ────
-   Tighten everything above the badge so the store button and the escape-hatch
+   Tighten everything above the badges so the store buttons and the escape-hatch
    helper are on screen without scrolling. */
 @media (max-height:680px){
   .top{padding-top:14px}
@@ -558,9 +560,10 @@ var STR = {
     sub:'Point your camera, say the amount, or just type it — Spent’s AI fills in the merchant, amount, date and category.',
     trial:'Free to download · 7-day trial · Cancel anytime',
     iabTapWord:'Tap', iabOpenWord:'→ Open in browser',
-    iabBody:'Use the menu at the top right if the App Store did not open.',
+    iabBody:'Use the menu at the top right if the store did not open.',
     iabBodyArmed:'Still here? Open that menu, then choose “Open in browser”.',
-    badgeApple:'Download on the', storeIos:'App Store',
+    badgeApple:'Download on the', badgeGoogle:'Get it on',
+    storeIos:'App Store', storeAndroid:'Google Play',
     ratingCap:'ratings on the App Store',
     reviews:[],
 
@@ -628,7 +631,7 @@ var STR = {
       {q:'Is my data private?', a:'Your data lives on your device first and syncs to your own private account. It is never shared with other users, and receipt images are readable only by you.'},
       {q:'What about different currencies?', a:'Spend in whatever currency you like. Spent stores the original amount and converts it to your base currency at the day’s rate.'},
       {q:'Can my family share it?', a:'Yes — shared lists and a Family plan let a household keep Personal, Family and Business spending apart while staying in sync.'},
-      {q:'Which devices does it run on?', a:'Spent is a native iPhone app and needs iOS 26.4 or later. There is no Android or web version.'}
+      {q:'Which devices does it run on?', a:'Spent runs on iPhone (iOS 26.4 or later) and Android (7.0 or later). There is no web version.'}
     ],
 
     ct:'Start tracking today', cb:'Free to download. Snap your first receipt in under a minute.',
@@ -641,9 +644,10 @@ var STR = {
     sub:'Наведите камеру, произнесите сумму или просто напишите — ИИ Spent заполнит магазин, сумму, дату и категорию.',
     trial:'Скачать бесплатно · 7 дней пробного периода · Отмена в любой момент',
     iabTapWord:'Нажмите', iabOpenWord:'→ «Открыть в браузере»',
-    iabBody:'Если App Store не открылся, откройте меню в правом верхнем углу.',
+    iabBody:'Если магазин не открылся, откройте меню в правом верхнем углу.',
     iabBodyArmed:'Ничего не произошло? Откройте это меню и выберите «Открыть в браузере».',
-    badgeApple:'Загрузить в', storeIos:'App Store',
+    badgeApple:'Загрузить в', badgeGoogle:'Доступно в',
+    storeIos:'App Store', storeAndroid:'Google Play',
     ratingCap:'оценок в App Store',
     reviews:[],
 
@@ -711,7 +715,7 @@ var STR = {
       {q:'Мои данные приватны?', a:'Данные сначала живут на вашем устройстве и синхронизируются в ваш личный аккаунт. Они не видны другим пользователям, а фото чеков доступны только вам.'},
       {q:'А если траты в разных валютах?', a:'Записывайте в любой валюте. Spent сохранит исходную сумму и пересчитает её в основную валюту по курсу дня.'},
       {q:'Можно пользоваться семьёй?', a:'Да — общие списки и тариф Family позволяют держать личные, семейные и рабочие траты раздельно, но синхронно.'},
-      {q:'На каких устройствах работает?', a:'Spent — нативное приложение для iPhone, нужен iOS 26.4 или новее. Версий для Android и для веба нет.'}
+      {q:'На каких устройствах работает?', a:'Spent работает на iPhone (iOS 26.4 или новее) и на Android (7.0 или новее). Веб-версии нет.'}
     ],
 
     ct:'Начните сегодня', cb:'Скачайте бесплатно и снимите первый чек меньше чем за минуту.',
@@ -724,9 +728,10 @@ var STR = {
     sub:'Kamerani qarating, summani ayting yoki shunchaki yozing — Spent AI do‘kon, summa, sana va turkumni o‘zi to‘ldiradi.',
     trial:'Bepul yuklab olish · 7 kunlik sinov · Istalgan vaqtda bekor qilish',
     iabTapWord:'Bosing', iabOpenWord:'→ “Brauzerda ochish”',
-    iabBody:'App Store ochilmasa, yuqori o‘ng burchakdagi menyudan foydalaning.',
+    iabBody:'Do‘kon ochilmasa, yuqori o‘ng burchakdagi menyudan foydalaning.',
     iabBodyArmed:'Hech narsa bo‘lmadimi? Shu menyuni ochib, “Brauzerda ochish”ni tanlang.',
-    badgeApple:'Yuklab olish', storeIos:'App Store',
+    badgeApple:'Yuklab olish', badgeGoogle:'O‘rnatish',
+    storeIos:'App Store', storeAndroid:'Google Play',
     ratingCap:'ta baho — App Store',
     reviews:[],
 
@@ -794,7 +799,7 @@ var STR = {
       {q:'Ma’lumotlarim maxfiymi?', a:'Ma’lumotlar avval qurilmangizda saqlanadi va sizning shaxsiy hisobingizga sinxronlanadi. Ular boshqa foydalanuvchilarga ko‘rinmaydi, chek rasmlarini esa faqat siz ochasiz.'},
       {q:'Turli valyutalar-chi?', a:'Istalgan valyutada yozing. Spent asl summani saqlaydi va uni kun kursi bo‘yicha asosiy valyutangizga o‘giradi.'},
       {q:'Oila bilan ishlata olamanmi?', a:'Ha — umumiy ro‘yxatlar va Family tarifi shaxsiy, oilaviy va ishga oid xarajatlarni alohida, ammo sinxron holda yuritish imkonini beradi.'},
-      {q:'Qaysi qurilmalarda ishlaydi?', a:'Spent — iPhone uchun mo‘ljallangan ilova, iOS 26.4 yoki undan yangirog‘i kerak. Android va veb versiyalari yo‘q.'}
+      {q:'Qaysi qurilmalarda ishlaydi?', a:'Spent iPhone (iOS 26.4 yoki undan yangirog‘i) va Android (7.0 yoki undan yangirog‘i) qurilmalarida ishlaydi. Veb versiyasi yo‘q.'}
     ],
 
     ct:'Bugundan boshlang', cb:'Bepul yuklab oling va birinchi chekingizni bir daqiqada suratga oling.',
@@ -846,7 +851,8 @@ function clean(v){ v = (v || '').toLowerCase(); return C.srcPattern.test(v) ? v 
    Query params only, deliberately: a path-based /go/<src>/<post> scheme was
    tried on CalFit and rejected. Cloudflare Web Analytics has no query-string
    dimension, so every link here collapses into one "/" row — per-creative
-   numbers come from App Store Connect, which is where installs live anyway. */
+   numbers come from App Store Connect (ct) and Play Console (utm), which is
+   where installs live anyway. */
 var src  = clean(param('src')) || (function(){
   var ref = document.referrer || '';
   for (var i = 0; i < REF_MAP.length; i++) if (REF_MAP[i][0].test(ref)) return REF_MAP[i][1];
@@ -879,7 +885,15 @@ function packCt(channel, creative){
 }
 var ct = packCt(src, post);
 
-/* Every URL here carries its tracking, including the app-scheme one. That is
+/* Google Play takes a full referrer string, so each level keeps its own UTM
+   dimension instead of being flattened the way Apple forces. */
+var playReferrer = 'utm_source=' + src +
+  '&utm_medium=social' +
+  '&utm_campaign=' + (post || 'bio') +
+  (post ? '&utm_content=' + post : '');
+var playReferrerParam = '&referrer=' + encodeURIComponent(playReferrer);
+
+/* Every URL here carries its tracking, including the app-scheme ones. That is
    the whole point: `handoffUrl()` prefers a scheme over https on most taps, so
    a scheme URL without the campaign attached is a tap whose attribution is
    thrown away at the last hop — invisible, because the visitor still lands in
@@ -891,6 +905,11 @@ var STORE = {
   ios: {
     url: 'https://apps.apple.com/app/id' + C.appleId + '?' + appleParams,
     schemeUrl: 'itms-apps://apps.apple.com/app/id' + C.appleId + '?' + appleParams
+  },
+  android: {
+    url: 'https://play.google.com/store/apps/details?id=' + C.androidPkg +
+         playReferrerParam,
+    schemeUrl: 'market://details?id=' + C.androidPkg + playReferrerParam
   }
 };
 
@@ -1036,48 +1055,73 @@ document.getElementById('shots').innerHTML = C.screens.map(function(s, i){
          (i === mid ? ' fetchpriority="high"' : '') + '>';
 }).join('');
 
-/* ══ store badge + smart tap ════════════════════════════════════════
-   The badge tries the itms-apps:// scheme (which hands straight to the App
-   Store app, including out of most in-app browsers) and falls back to the
-   plain https store link if nothing took over. */
+/* ══ store badges + smart tap ═══════════════════════════════════════
+   The visitor's own store is listed first. Each badge tries the app scheme
+   (itms-apps:// or market://, or an Android intent:// URL — the one handoff
+   Meta's in-app browser honours) and falls back to the plain https store link
+   if nothing took over. */
 var APPLE_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
   + '<path d="M17.05 12.5c0-2 1.05-3.3 2.35-4.1a4.7 4.7 0 0 0-3.7-2c-1.55-.15-3.2.9-3.8.9-.65 0-2-.85-3.3-.85C6.05 6.5 4 8.4 4 12.2c0 1.15.2 2.35.6 3.6.55 1.65 2.5 5.7 4.55 5.6 1.05-.05 1.8-.75 3.15-.75 1.3 0 2 .75 3.15.75 2.05-.05 3.85-3.7 4.35-5.35-2.7-1.3-2.75-3.5-2.75-3.55zM14.6 5.1c1.15-1.4 1.05-2.65 1-3.1-1.05.05-2.25.7-2.95 1.5-.75.85-1.15 1.9-1.05 3.05 1.15.1 2.2-.5 3-1.45z"/></svg>';
+
+var PLAY_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true">'
+  + '<path fill="#00A0FF" d="M3.4 2.1c-.2.2-.3.5-.3.9v18c0 .4.1.7.3.9L12.5 12z"/>'
+  + '<path fill="#00C853" d="M3.4 2.1 15.6 8.9 12.5 12z"/>'
+  + '<path fill="#FF3A44" d="M3.4 21.9 15.6 15.1 12.5 12z"/>'
+  + '<path fill="#FFBC00" d="M15.6 8.9 19.9 11.3c.8.4.8 1 0 1.4l-4.3 2.4L12.5 12z"/></svg>';
+
+/* The referrer goes on the intent's own data URI, not just on the fallback.
+   Everything before the `#` becomes the Intent's data — i.e. the Play Store
+   receives market://details?id=…&referrer=… — while browser_fallback_url only
+   applies when the intent DOESN'T resolve. Carrying it in the fallback alone
+   would keep attribution in exactly the case where the deep link failed. */
+function intentUrl(){
+  return 'intent://details?id=' + C.androidPkg + playReferrerParam +
+    '#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=' +
+    encodeURIComponent(STORE.android.url) + ';end';
+}
 
 /* Best hand-off for this environment.
    Instagram exposes `instagram://extbrowser`, which asks Instagram itself to
    reopen a URL in the real browser — the one reliable way out of its webview,
-   and far better than hoping a plain store link survives. Everywhere else the
-   plain app scheme is enough. Note that a plain https navigation is never
-   attempted from inside a webview: it would just load the store page trapped
-   in that same webview. */
-function handoffUrl(){
-  if (isInsta) return 'instagram://extbrowser?url=' + encodeURIComponent(STORE.ios.url);
-  return STORE.ios.schemeUrl;
+   and far better than hoping a plain store link survives. Android's in-app
+   browsers honour intent://. Everywhere else the plain app scheme is enough.
+   Note that a plain https navigation is never attempted from inside a webview:
+   it would just load the store page trapped in that same webview. */
+function handoffUrl(platform){
+  var cfg = STORE[platform];
+  if (isInsta) return 'instagram://extbrowser?url=' + encodeURIComponent(cfg.url);
+  if (platform === 'android' && inIAB) return intentUrl();
+  return cfg.schemeUrl;
 }
-function badgeHTML(){
-  return '<a class="badge" rel="noopener" href="' + STORE.ios.url + '">' + APPLE_SVG +
-    '<span class="lbl"><small>' + T.badgeApple + '</small><b>' + T.storeIos + '</b></span></a>';
+function badgeHTML(platform){
+  var apple = platform === 'ios';
+  return '<a class="badge" data-p="' + platform + '" rel="noopener" href="' + STORE[platform].url + '">' +
+    (apple ? APPLE_SVG : PLAY_SVG) +
+    '<span class="lbl"><small>' + (apple ? T.badgeApple : T.badgeGoogle) + '</small>' +
+    '<b>' + (apple ? T.storeIos : T.storeAndroid) + '</b></span></a>';
 }
+var order = os === 'android' ? ['android','ios'] : ['ios','android'];
 function renderBadges(){
   ['badges-hero','badges-bottom'].forEach(function(id){
-    document.getElementById(id).innerHTML = badgeHTML();
+    document.getElementById(id).innerHTML = order.map(badgeHTML).join('');
   });
   [].forEach.call(document.querySelectorAll('.badge'), function(el){
     el.addEventListener('click', function(e){
+      var platform = el.getAttribute('data-p'), cfg = STORE[platform];
       if (inIAB){
         var box = document.getElementById('iab');
         box.classList.add('armed');
         box.querySelector('.iab-body').textContent = T.iabBodyArmed;
       }
       if (!C.preferScheme) return;
-      var deep = handoffUrl();
-      if (!deep || deep === STORE.ios.url) return;
+      var deep = handoffUrl(platform);
+      if (!deep || deep === cfg.url) return;
       e.preventDefault();
       var gone = false;
       function mark(){ gone = true; }
       document.addEventListener('visibilitychange', function(){ if (document.hidden) mark(); }, {once:true});
       window.addEventListener('pagehide', mark, {once:true});
-      setTimeout(function(){ if (!gone) location.href = STORE.ios.url; }, 1600);
+      setTimeout(function(){ if (!gone) location.href = cfg.url; }, 1600);
       location.href = deep;
     });
   });
@@ -1143,12 +1187,10 @@ if (inIAB) document.getElementById('iab').hidden = false;
 })();
 
 /* ══ auto hand-off ══════════════════════════════════════════════════
-   iPhones arriving from a social link go to the store without waiting for a
-   tap. Three rules keep this from backfiring:
+   iPhones and Android phones arriving from a social link go to their own
+   store without waiting for a tap. Two rules keep this from backfiring:
 
    • Desktop never redirects — it would only show the store's web page.
-   • Android never redirects either: there is no Android app, so the App Store
-     would be a dead end. Those visitors just read the page.
    • Inside an in-app browser we attempt ONLY the break-out scheme. A plain
      https navigation would load the store page trapped in that same webview,
      which is worse than staying here, so on failure the page and its
@@ -1157,13 +1199,13 @@ if (inIAB) document.getElementById('iab').hidden = false;
    The attempt is silent and harmless: an unhandled scheme does nothing. */
 (function autoHandoff(){
   if (!C.autoRedirect) return;
-  if (os !== 'ios') return;
+  if (os !== 'ios' && os !== 'android') return;
   if (param('noredirect') === '1') return;          // escape hatch for testing
   var fromSocial = src !== 'direct';
   if (!inIAB && !fromSocial) return;                // organic visitors read the page
 
   setTimeout(function(){
-    var target = inIAB ? handoffUrl() : STORE.ios.url;
+    var target = inIAB ? handoffUrl(os) : STORE[os].url;
     if (inIAB){
       var box = document.getElementById('iab');
       if (box){
@@ -1232,7 +1274,7 @@ if (inIAB) document.getElementById('iab').hidden = false;
   document.body.appendChild(s);
 })();
 
-/* Preview hook: __preview('iab'|'web', 'ru', 'ios') */
+/* Preview hook: __preview('iab'|'web', 'ru', 'ios'|'android') */
 window.__preview = function(s, l, o){
   location.replace(location.pathname + '?state=' + (s || (inIAB ? 'iab' : 'web')) +
                    '&lang=' + (l || lang) + '&os=' + (o || os) + '&noredirect=1');
