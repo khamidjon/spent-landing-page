@@ -7,7 +7,7 @@ include_in_header: false
 {% include legal_langs.html doc='privacypolicy' %}
 
 **Last updated**
-November 3 2026
+November 15 2026
 
 # Privacy Policy
 Spent is developed by **Khamidjon Egamov**. In the Republic of Uzbekistan, the Spent service and payments for Spent Pro made with bank cards are provided by **Individual Entrepreneur Egamov Hamidjon Sayrambay O‘g‘li** (the "Operator"), whose details are listed in [Section 9](#operator-details){:target="_self"}. On Google Play, Spent is published by **Thunder LLC**. Thank you for using Spent! Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our app.

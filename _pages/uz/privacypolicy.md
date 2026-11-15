@@ -8,7 +8,7 @@ include_in_header: false
 {% include legal_langs.html doc='privacypolicy' %}
 
 **Oxirgi yangilanish**
-2026-yil 3-noyabr
+2026-yil 15-noyabr
 
 # Maxfiylik siyosati
 Spent ilovasi **Khamidjon Egamov** tomonidan ishlab chiqilgan. O‘zbekiston Respublikasida Spent xizmati va Spent Pro uchun bank kartalari orqali to‘lovlarni **YaTT Egamov Hamidjon Sayrambay O‘g‘li** (keyingi o‘rinlarda — «Operator») taqdim etadi, uning rekvizitlari [9-bo‘limda](#operator-details){:target="_self"} keltirilgan. Google Play’da Spent ilovasini **Thunder LLC** nashr etadi. Spent’dan foydalanayotganingiz uchun rahmat! Biz maxfiyligingizni qadrlaymiz. Ushbu Maxfiylik siyosati ilovadan foydalanganingizda ma’lumotlaringizni qanday to‘plashimiz, ishlatishimiz va himoya qilishimizni tushuntiradi.

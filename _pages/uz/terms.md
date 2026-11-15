@@ -8,7 +8,7 @@ include_in_header: false
 {% include legal_langs.html doc='terms' %}
 
 **Oxirgi yangilanish**
-2026-yil 6-noyabr
+2026-yil 15-noyabr
 
 # Foydalanish shartlari
 Ushbu Foydalanish shartlari («Shartlar») **Khamidjon Egamov** tomonidan ishlab chiqilgan Spent ilovasidan («Ilova») foydalanish tartibini belgilaydi. O‘zbekiston Respublikasida Ilova va Spent Pro uchun bank kartalari orqali to‘lovlarni **YaTT Egamov Hamidjon Sayrambay O‘g‘li** («Operator») taqdim etadi, uning rekvizitlari [13-bo‘limda](#operator-details){:target="_self"} keltirilgan. Google Play’da Spent ilovasini **Thunder LLC** nashr etadi. Ilovaga kirish yoki undan foydalanish orqali siz ushbu Shartlarga rioya qilishga rozilik bildirasiz.
