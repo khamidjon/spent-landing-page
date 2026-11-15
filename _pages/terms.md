@@ -10,7 +10,7 @@ include_in_header: false
 November 6 2026
 
 # Terms of Use
-These Terms of Use ("Terms") govern your use of the Spent app ("App"), developed by **Khamidjon Egamov**. In the Republic of Uzbekistan, the App and payments for Spent Pro made with bank cards are provided by **"ELEVEN THREE" LLC** (the "Operator"), whose details are listed in [Section 13](#operator-details){:target="_self"}. On Google Play, Spent is published by **Thunder LLC**. By accessing or using the App, you agree to be bound by these Terms.
+These Terms of Use ("Terms") govern your use of the Spent app ("App"), developed by **Khamidjon Egamov**. In the Republic of Uzbekistan, the App and payments for Spent Pro made with bank cards are provided by **Individual Entrepreneur Egamov Hamidjon Sayrambay O‘g‘li** (the "Operator"), whose details are listed in [Section 13](#operator-details){:target="_self"}. On Google Play, Spent is published by **Thunder LLC**. By accessing or using the App, you agree to be bound by these Terms.
 
 <br>
 ## 1. Acceptance of Terms

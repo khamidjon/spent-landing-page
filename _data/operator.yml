@@ -6,29 +6,29 @@ email: admin@summerapps.com
 en:
   email_label: Email
   rows:
-    - ["Organization name", "\"ELEVEN THREE\" LLC"]
-    - ["Legal address", "9 Kattasov 2nd Dead-end Street, Khasanboy MFY, Yunusobod District, Tashkent, Republic of Uzbekistan"]
-    - ["TIN", "312 975 473"]
-    - ["Bank", "UzSanoatqurilish Bank, City Branch"]
-    - ["MFO", "00440"]
-    - ["Account number", "2020 8000 8074 5061 1001"]
+    - ["Name", "Individual Entrepreneur Egamov Hamidjon Sayrambay O‘g‘li"]
+    - ["Legal address", "6 Xuroson 1st Lane, apt. 13, Mirzo Ulugbek District, Tashkent, Republic of Uzbekistan"]
+    - ["TIN (PINFL)", "30702986600041"]
+    - ["Bank", "TBC Bank"]
+    - ["MFO", "01180"]
+    - ["Account number", "2021 8000 3075 6908 6001"]
 
 ru:
   email_label: Электронная почта
   rows:
-    - ["Наименование организации", "ООО «ELEVEN THREE»"]
-    - ["Юридический адрес", "Республика Узбекистан, г. Ташкент, Юнусабадский район, МСГ Хасанбой, 2-й тупик Каттасов, д. 9"]
-    - ["ИНН", "312 975 473"]
-    - ["Банк", "UzSanoatqurilish Bank, Городской филиал"]
-    - ["МФО", "00440"]
-    - ["Расчётный счёт", "2020 8000 8074 5061 1001"]
+    - ["Наименование", "ИП Egamov Hamidjon Sayrambay O‘g‘li"]
+    - ["Юридический адрес", "Республика Узбекистан, г. Ташкент, Мирзо-Улугбекский район, 1-й проезд Хуросон, д. 6, кв. 13"]
+    - ["ИНН (ПИНФЛ)", "30702986600041"]
+    - ["Банк", "TBC Bank"]
+    - ["МФО", "01180"]
+    - ["Расчётный счёт", "2021 8000 3075 6908 6001"]
 
 uz:
   email_label: Elektron pochta
   rows:
-    - ["Tashkilot nomi", "«ELEVEN THREE» MChJ"]
-    - ["Yuridik manzil", "O‘zbekiston Respublikasi, Toshkent shahri, Yunusobod tumani, Hasanboy MFY, Kattasov 2-berk ko‘chasi, 9-uy"]
-    - ["STIR", "312 975 473"]
-    - ["Bank", "UzSanoatqurilish Bank, Shahar filiali"]
-    - ["MFO", "00440"]
-    - ["Hisob raqami", "2020 8000 8074 5061 1001"]
+    - ["Nomi", "YaTT Egamov Hamidjon Sayrambay O‘g‘li"]
+    - ["Yuridik manzil", "O‘zbekiston Respublikasi, Toshkent shahri, Mirzo Ulug‘bek tumani, Xuroson 1-tor ko‘chasi, 6-uy, 13-xonadon"]
+    - ["STIR (JShShIR)", "30702986600041"]
+    - ["Bank", "TBC Bank"]
+    - ["MFO", "01180"]
+    - ["Hisob raqami", "2021 8000 3075 6908 6001"]
