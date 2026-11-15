@@ -1,7 +1,7 @@
 # Merchant details required by the card acquirers (Rahmat, Payme).
 # Rendered by _includes/operator_details.html at the end of the privacy policy
 # and terms pages, in every language. Change them here only.
-email: admin@summerapps.com
+email: egamovhamid@gmail.com
 
 en:
   email_label: Email

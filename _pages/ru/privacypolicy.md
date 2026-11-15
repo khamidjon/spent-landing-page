@@ -88,7 +88,7 @@ Spent предоставляет Spent Pro по подписке. Платежи
 ## 8. Контакты {#contact}
 Если у вас есть вопросы по настоящей Политике конфиденциальности, свяжитесь с нами:
 
-Электронная почта: [admin@summerapps.com](mailto:admin@summerapps.com)
+Электронная почта: [egamovhamid@gmail.com](mailto:egamovhamid@gmail.com)
 
 <br>
 

@@ -88,7 +88,7 @@ Ushbu Maxfiylik siyosatini vaqti-vaqti bilan yangilashimiz mumkin. Muhim o‘zga
 ## 8. Biz bilan bog‘lanish {#contact}
 Ushbu Maxfiylik siyosati bo‘yicha savollaringiz bo‘lsa, biz bilan bog‘laning:
 
-Elektron pochta: [admin@summerapps.com](mailto:admin@summerapps.com)
+Elektron pochta: [egamovhamid@gmail.com](mailto:egamovhamid@gmail.com)
 
 <br>
 

@@ -68,7 +68,7 @@ Spent offers monthly and yearly plans that unlock Spent Pro features within the 
 **Bank card payments in the Republic of Uzbekistan**
 - Payments made with a bank card through Rahmat or Payme are accepted by the Operator. Prices are shown in Uzbek soums (UZS) before payment.
 - Each payment gives access to Spent Pro for the paid period (one month or one year) from the date of payment. If you already have access, the new period is added to the end of the current one. These payments do not renew automatically, and your card is not charged again unless you make a new payment.
-- To request a refund, contact us at [admin@summerapps.com](mailto:admin@summerapps.com) with your order details. Requests are reviewed in accordance with the legislation of the Republic of Uzbekistan, and approved refunds are returned to the card used for payment.
+- To request a refund, contact us at [egamovhamid@gmail.com](mailto:egamovhamid@gmail.com) with your order details. Requests are reviewed in accordance with the legislation of the Republic of Uzbekistan, and approved refunds are returned to the card used for payment.
 
 <br>
 ## 10. Changes to Subscription Terms
@@ -82,7 +82,7 @@ These Terms shall be governed by the laws of the Republic of Uzbekistan, and any
 ## 12. Contact Information
 If you have any questions about these Terms, please contact us at:
 
-Email: [admin@summerapps.com](mailto:admin@summerapps.com)
+Email: [egamovhamid@gmail.com](mailto:egamovhamid@gmail.com)
 
 <br>
 

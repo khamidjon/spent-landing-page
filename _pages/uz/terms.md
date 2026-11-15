@@ -69,7 +69,7 @@ Spent Ilovadagi Spent Pro funksiyalarini ochadigan oylik va yillik tariflarni ta
 **O‘zbekiston Respublikasida bank kartalari orqali to‘lovlar**
 - Rahmat yoki Payme orqali bank kartasi bilan qilingan to‘lovlarni Operator qabul qiladi. Narxlar to‘lovdan oldin o‘zbek so‘mida (UZS) ko‘rsatiladi.
 - Har bir to‘lov Spent Pro’dan to‘lov sanasidan boshlab to‘langan muddat (bir oy yoki bir yil) davomida foydalanish imkonini beradi. Agar sizda allaqachon kirish bo‘lsa, yangi muddat joriy muddat tugashiga qo‘shiladi. Bu to‘lovlar avtomatik yangilanmaydi va yangi to‘lov qilmaguningizcha kartangizdan pul yechilmaydi.
-- Pulni qaytarishni so‘rash uchun buyurtma ma’lumotlarini ko‘rsatib, [admin@summerapps.com](mailto:admin@summerapps.com) manziliga yozing. So‘rovlar O‘zbekiston Respublikasi qonunchiligiga muvofiq ko‘rib chiqiladi, ma’qullangan summalar to‘lov qilingan kartaga qaytariladi.
+- Pulni qaytarishni so‘rash uchun buyurtma ma’lumotlarini ko‘rsatib, [egamovhamid@gmail.com](mailto:egamovhamid@gmail.com) manziliga yozing. So‘rovlar O‘zbekiston Respublikasi qonunchiligiga muvofiq ko‘rib chiqiladi, ma’qullangan summalar to‘lov qilingan kartaga qaytariladi.
 
 <br>
 ## 10. Obuna shartlariga o‘zgartirishlar
@@ -83,7 +83,7 @@ Ushbu Shartlar O‘zbekiston Respublikasi qonunchiligi bilan tartibga solinadi. 
 ## 12. Aloqa ma’lumotlari
 Ushbu Shartlar bo‘yicha savollaringiz bo‘lsa, biz bilan bog‘laning:
 
-Elektron pochta: [admin@summerapps.com](mailto:admin@summerapps.com)
+Elektron pochta: [egamovhamid@gmail.com](mailto:egamovhamid@gmail.com)
 
 <br>
 
